@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#090E24"/>
+      <stop offset="100%" stop-color="#0D1536"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  
+  <!-- Subtle ambient glow -->
+  <circle cx="950" cy="150" r="250" fill="#8B5CF6" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="200" cy="550" r="200" fill="#38BDF8" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Main Glass Window Container -->
+  <g transform="translate(60, 45)">
+    <rect width="1080" height="585" rx="16" fill="#0F172A" fill-opacity="0.7" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1.5"/>
+    
+    <!-- Window Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 1064 0 C 1072.84 0 1080 7.16 1080 16 L 1080 48 L 0 48 Z" fill="#131E47" fill-opacity="0.8"/>
+    <circle cx="24" cy="24" r="6" fill="#EF4444" opacity="0.85"/>
+    <circle cx="44" cy="24" r="6" fill="#F59E0B" opacity="0.85"/>
+    <circle cx="64" cy="24" r="6" fill="#10B981" opacity="0.85"/>
+    
+    <!-- Window Title -->
+    <text x="540" y="30" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="500">
+      Equipment Borrowing System • Asset Lending Portal — System Preview
+    </text>
+
+    <!-- Top Badge -->
+    <rect x="910" y="14" width="150" height="22" rx="11" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+    <text x="985" y="29" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="600">
+      Web Information System
+    </text>
+
+    <!-- Inner Content Area -->
+    <g transform="translate(32, 70)">
+      
+  <g transform="translate(0, 15)">
+    <rect x="0" y="0" width="1010" height="420" rx="12" fill="#131E47" fill-opacity="0.4" stroke="rgba(56, 189, 248, 0.15)"/>
+    <text x="30" y="40" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600">School & Lab Equipment Lending Approval System</text>
+    <text x="30" y="65" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Digital asset reservation, teacher/lab head approval workflow, return condition inspection, and audit history</text>
+
+    <!-- Workflow Steps -->
+    <g transform="translate(30, 95)">
+      <g>
+        <rect width="300" height="130" rx="10" fill="#1E293B" fill-opacity="0.6"/>
+        <text x="20" y="30" fill="#8B5CF6" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">REQUEST SUBMISSION</text>
+        <text x="20" y="55" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="14" font-weight="600">Sony Alpha 7 IV + Lensa 24-70mm</text>
+        <text x="20" y="78" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Peminjam: Muhammad Kevin (RPL)</text>
+        <text x="20" y="98" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="11">Keperluan: Dokumentasi Proyek TA</text>
+      </g>
+
+      <g transform="translate(325, 0)">
+        <rect width="300" height="130" rx="10" fill="#1E293B" fill-opacity="0.6"/>
+        <text x="20" y="30" fill="#10B981" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">MULTI-LEVEL APPROVAL</text>
+        <text x="20" y="55" fill="#10B981" font-family="'Inter', sans-serif" font-size="13">✓ Pembina Lab: Approved</text>
+        <text x="20" y="78" fill="#10B981" font-family="'Inter', sans-serif" font-size="13">✓ Waka Sarpras: Verified</text>
+        <text x="20" y="105" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Batas Pengembalian: 3 Hari</text>
+      </g>
+
+      <g transform="translate(650, 0)">
+        <rect width="300" height="130" rx="10" fill="#1E293B" fill-opacity="0.6"/>
+        <text x="20" y="30" fill="#F59E0B" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">RETURN INSPECTION</text>
+        <text x="20" y="55" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13">Kondisi Alat: Sangat Baik</text>
+        <text x="20" y="78" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Sensor bersih, baterai terisi, memori format.</text>
+        <rect x="20" y="95" width="100" height="20" rx="4" fill="rgba(16,185,129,0.2)"/>
+        <text x="70" y="109" fill="#10B981" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">CLOSED / SELESAI</text>
+      </g>
+    </g>
+
+    <!-- Table of Assets -->
+    <g transform="translate(30, 245)">
+      <rect width="950" height="150" rx="8" fill="#1E293B" fill-opacity="0.4"/>
+      <text x="20" y="30" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">Active Asset Catalog & Availability Tracker</text>
+      
+      <g transform="translate(20, 50)">
+        <text x="0" y="20" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">1. Projektor Epson EB-X500 • Status: Tersedia (Lab Komputer 2)</text>
+        <text x="0" y="45" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">2. Mikrotik Router RB750Gr3 • Status: Dipinjam (Kelompok Jaringan)</text>
+        <text x="0" y="70" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">3. Raspberry Pi 4 Model B 8GB • Status: Tersedia (Inventaris Hardware)</text>
+      </g>
+    </g>
+  </g>
+  
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#090E24"/>
+      <stop offset="100%" stop-color="#0D1536"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  
+  <!-- Subtle ambient glow -->
+  <circle cx="950" cy="150" r="250" fill="#10B981" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="200" cy="550" r="200" fill="#38BDF8" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Main Glass Window Container -->
+  <g transform="translate(60, 45)">
+    <rect width="1080" height="585" rx="16" fill="#0F172A" fill-opacity="0.7" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1.5"/>
+    
+    <!-- Window Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 1064 0 C 1072.84 0 1080 7.16 1080 16 L 1080 48 L 0 48 Z" fill="#131E47" fill-opacity="0.8"/>
+    <circle cx="24" cy="24" r="6" fill="#EF4444" opacity="0.85"/>
+    <circle cx="44" cy="24" r="6" fill="#F59E0B" opacity="0.85"/>
+    <circle cx="64" cy="24" r="6" fill="#10B981" opacity="0.85"/>
+    
+    <!-- Window Title -->
+    <text x="540" y="30" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="500">
+      Presensi • Admin Dashboard & Analytics — System Preview
+    </text>
+
+    <!-- Top Badge -->
+    <rect x="910" y="14" width="150" height="22" rx="11" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+    <text x="985" y="29" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="600">
+      Fullstack Web App
+    </text>
+
+    <!-- Inner Content Area -->
+    <g transform="translate(32, 70)">
+      
+  <g transform="translate(0, 15)">
+    <rect x="0" y="0" width="1010" height="420" rx="12" fill="#131E47" fill-opacity="0.4" stroke="rgba(56, 189, 248, 0.15)"/>
+    <text x="30" y="40" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600">School Admin Attendance Dashboard & Analytics</text>
+    <text x="30" y="65" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Automated morning attendance recap, late arrival tracking, and Excel export</text>
+
+    <!-- 3 Mini stat circles -->
+    <g transform="translate(30, 95)">
+      <rect width="300" height="100" rx="10" fill="#1E293B" fill-opacity="0.6"/>
+      <text x="20" y="35" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Overall Present Rate</text>
+      <text x="20" y="75" fill="#10B981" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="700">97.8%</text>
+    </g>
+    <g transform="translate(355, 95)">
+      <rect width="300" height="100" rx="10" fill="#1E293B" fill-opacity="0.6"/>
+      <text x="20" y="35" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Late Check-ins Today</text>
+      <text x="20" y="75" fill="#F59E0B" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="700">12 Students</text>
+    </g>
+    <g transform="translate(680, 95)">
+      <rect width="300" height="100" rx="10" fill="#1E293B" fill-opacity="0.6"/>
+      <text x="20" y="35" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Sick / Excused (Izin)</text>
+      <text x="20" y="75" fill="#38BDF8" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="700">6 Students</text>
+    </g>
+
+    <!-- Table preview -->
+    <g transform="translate(30, 220)">
+      <rect width="950" height="175" rx="8" fill="#1E293B" fill-opacity="0.4"/>
+      <text x="25" y="35" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">Today's Class Summaries (RPL 1, RPL 2, TKJ 1, MM 1)</text>
+      
+      <g transform="translate(25, 55)">
+        <text x="0" y="20" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Class XII RPL 1: 36/36 Present (100%) • Verification: All Photos Signed</text>
+        <text x="0" y="50" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Class XII RPL 2: 35/36 Present (97.2%) • 1 Sick Leave Document Uploaded</text>
+        <text x="0" y="80" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Daily Recap automatically compiled at 08:00 AM WIB for homeroom teachers.</text>
+      </g>
+    </g>
+  </g>
+  
+    </g>
+  </g>
+</svg>

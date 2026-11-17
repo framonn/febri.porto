@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#090E24"/>
+      <stop offset="100%" stop-color="#0D1536"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  
+  <!-- Subtle ambient glow -->
+  <circle cx="950" cy="150" r="250" fill="#F59E0B" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="200" cy="550" r="200" fill="#38BDF8" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Main Glass Window Container -->
+  <g transform="translate(60, 45)">
+    <rect width="1080" height="585" rx="16" fill="#0F172A" fill-opacity="0.7" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1.5"/>
+    
+    <!-- Window Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 1064 0 C 1072.84 0 1080 7.16 1080 16 L 1080 48 L 0 48 Z" fill="#131E47" fill-opacity="0.8"/>
+    <circle cx="24" cy="24" r="6" fill="#EF4444" opacity="0.85"/>
+    <circle cx="44" cy="24" r="6" fill="#F59E0B" opacity="0.85"/>
+    <circle cx="64" cy="24" r="6" fill="#10B981" opacity="0.85"/>
+    
+    <!-- Window Title -->
+    <text x="540" y="30" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="500">
+      KantO • Digital School Canteen — System Preview
+    </text>
+
+    <!-- Top Badge -->
+    <rect x="910" y="14" width="150" height="22" rx="11" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+    <text x="985" y="29" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="600">
+      Fullstack & Product Design
+    </text>
+
+    <!-- Inner Content Area -->
+    <g transform="translate(32, 70)">
+      
+  <g transform="translate(0, 15)">
+    <rect x="0" y="0" width="1010" height="425" rx="12" fill="#131E47" fill-opacity="0.4" stroke="rgba(56, 189, 248, 0.15)"/>
+    <text x="30" y="40" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600">Digital Canteen Marketplace & Order Terminal</text>
+    <text x="30" y="65" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Pre-order breaktime meals, student coin rewards, queue management, and merchant sales</text>
+
+    <!-- Menu Food Grid -->
+    <g transform="translate(30, 95)">
+      <!-- Item 1 -->
+      <g>
+        <rect width="215" height="230" rx="10" fill="#1E293B" fill-opacity="0.6" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="15" y="15" width="185" height="100" rx="8" fill="#0D1536"/>
+        <text x="107" y="70" fill="#F59E0B" font-family="'Space Grotesk', sans-serif" font-size="16" text-anchor="middle" font-weight="700">Nasi Goreng Spesial</text>
+        <text x="20" y="145" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Rp 15.000</text>
+        <text x="20" y="165" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="11">★ 4.9 (124 reviews)</text>
+        <rect x="20" y="185" width="175" height="30" rx="6" fill="#F59E0B"/>
+        <text x="107" y="205" fill="#000" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="700">+ Add to Tray</text>
+      </g>
+      <!-- Item 2 -->
+      <g transform="translate(245, 0)">
+        <rect width="215" height="230" rx="10" fill="#1E293B" fill-opacity="0.6" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="15" y="15" width="185" height="100" rx="8" fill="#0D1536"/>
+        <text x="107" y="70" fill="#38BDF8" font-family="'Space Grotesk', sans-serif" font-size="16" text-anchor="middle" font-weight="700">Ayam Geprek Sambal</text>
+        <text x="20" y="145" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Rp 18.000</text>
+        <text x="20" y="165" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="11">★ 4.8 (98 reviews)</text>
+        <rect x="20" y="185" width="175" height="30" rx="6" fill="#F59E0B"/>
+        <text x="107" y="205" fill="#000" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="700">+ Add to Tray</text>
+      </g>
+      <!-- Item 3 -->
+      <g transform="translate(490, 0)">
+        <rect width="215" height="230" rx="10" fill="#1E293B" fill-opacity="0.6" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="15" y="15" width="185" height="100" rx="8" fill="#0D1536"/>
+        <text x="107" y="70" fill="#10B981" font-family="'Space Grotesk', sans-serif" font-size="16" text-anchor="middle" font-weight="700">Dimsum Ayam 4pcs</text>
+        <text x="20" y="145" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Rp 12.000</text>
+        <text x="20" y="165" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="11">★ 4.7 (76 reviews)</text>
+        <rect x="20" y="185" width="175" height="30" rx="6" fill="#F59E0B"/>
+        <text x="107" y="205" fill="#000" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="700">+ Add to Tray</text>
+      </g>
+      <!-- Cart summary side -->
+      <g transform="translate(735, 0)">
+        <rect width="215" height="230" rx="10" fill="#0A0F1D" stroke="rgba(56,189,248,0.2)"/>
+        <text x="15" y="30" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">Active Order #KNT-42</text>
+        <text x="15" y="55" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Pickup: 10:15 WIB (Istirahat)</text>
+        <text x="15" y="90" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">1x Nasi Goreng Spesial</text>
+        <text x="15" y="115" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">1x Es Teh Manis</text>
+        <text x="15" y="150" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">Total: Rp 20.000</text>
+        <rect x="15" y="175" width="185" height="38" rx="6" fill="#38BDF8"/>
+        <text x="107" y="199" fill="#050814" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" font-weight="700">CONFIRM & PAY</text>
+      </g>
+    </g>
+
+    <!-- Bottom strip -->
+    <g transform="translate(30, 350)">
+      <rect width="950" height="50" rx="8" fill="#1E293B" fill-opacity="0.4"/>
+      <text x="25" y="30" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">
+        Tech Stack: PHP, MySQL, JavaScript, Tailwind CSS • Features: QR code pick-up token, vendor order dashboard.
+      </text>
+    </g>
+  </g>
+  
+    </g>
+  </g>
+</svg>
