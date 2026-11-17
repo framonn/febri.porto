@@ -70,6 +70,30 @@ export interface Experience {
   icon: string;
 }
 
+export interface Certificate {
+  id: string;
+  title: {
+    en: string;
+    id: string;
+  };
+  issuer: string;
+  category: {
+    en: string;
+    id: string;
+  };
+  date: string;
+  image: string;
+  fallbackImage: string;
+  description: {
+    en: string;
+    id: string;
+  };
+  skills?: string[];
+  credentialId?: string;
+  credentialUrl?: string;
+  verified?: boolean;
+}
+
 export interface SkillCategory {
   id: string;
   title: {

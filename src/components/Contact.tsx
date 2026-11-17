@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
                   {t.contact.quickEmailTitle}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-mono border border-emerald-500/30">
-                  Fast Response
+                  Available
                 </span>
               </div>
 

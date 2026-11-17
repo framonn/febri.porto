@@ -3,6 +3,7 @@ export interface TranslationContent {
     about: string;
     experience: string;
     projects: string;
+    certificates: string;
     skills: string;
     contact: string;
     resume: string;
@@ -84,6 +85,19 @@ export interface TranslationContent {
       prevImage: string;
     };
   };
+  certificates: {
+    sectionBadge: string;
+    title: string;
+    subtitle: string;
+    clickToEnlarge: string;
+    verifiedBadge: string;
+    issuedBy: string;
+    issueDate: string;
+    credentialCategory: string;
+    closeLightbox: string;
+    viewOriginal: string;
+    singleFeaturedNote: string;
+  };
   skills: {
     sectionBadge: string;
     title: string;
@@ -149,6 +163,7 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
       about: 'About',
       experience: 'Experience',
       projects: 'Projects',
+      certificates: 'Certificates',
       skills: 'Skills',
       contact: 'Contact',
       resume: 'Resume',
@@ -230,6 +245,19 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
         prevImage: 'Previous image',
       },
     },
+    certificates: {
+      sectionBadge: 'Credentials & Mastery',
+      title: 'Certificates & Credentials',
+      subtitle: 'Verified technical competency and certification.',
+      clickToEnlarge: 'Click to Enlarge',
+      verifiedBadge: 'Verified Credential',
+      issuedBy: 'Issuing Organization',
+      issueDate: 'Issued',
+      credentialCategory: 'Category',
+      closeLightbox: 'Close',
+      viewOriginal: 'Inspect High-Resolution',
+      singleFeaturedNote: 'Featured Official Certification',
+    },
     skills: {
       sectionBadge: 'Capabilities',
       title: 'Technical Arsenal & Skillset',
@@ -294,6 +322,7 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
       about: 'Tentang',
       experience: 'Pengalaman',
       projects: 'Proyek',
+      certificates: 'Sertifikat',
       skills: 'Keahlian',
       contact: 'Kontak',
       resume: 'Resume',
@@ -374,6 +403,19 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
         nextImage: 'Gambar selanjutnya',
         prevImage: 'Gambar sebelumnya',
       },
+    },
+    certificates: {
+      sectionBadge: 'Kredensial & Sertifikasi',
+      title: 'Sertifikat & Kredensial',
+      subtitle: 'Sertifikasi kompetensi keahlian dan pencapaian terverifikasi.',
+      clickToEnlarge: 'Klik untuk Memperbesar',
+      verifiedBadge: 'Kredensial Terverifikasi',
+      issuedBy: 'Lembaga Penerbit',
+      issueDate: 'Tahun',
+      credentialCategory: 'Kategori',
+      closeLightbox: 'Tutup',
+      viewOriginal: 'Perbesar Resolusi Penuh',
+      singleFeaturedNote: 'Sertifikasi Resmi Unggulan',
     },
     skills: {
       sectionBadge: 'Kapabilitas Teknis',

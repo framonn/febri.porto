@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="certBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#090E24"/>
+      <stop offset="100%" stop-color="#0D1536"/>
+    </linearGradient>
+    <linearGradient id="goldCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="sealGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="sealGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="certGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56,189,248,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#certBg)"/>
+  <rect width="1200" height="900" fill="url(#certGrid)"/>
+
+  <!-- Ornate Outer Border Frame -->
+  <rect x="40" y="40" width="1120" height="820" rx="20" fill="none" stroke="rgba(56,189,248,0.3)" stroke-width="2"/>
+  <rect x="52" y="52" width="1096" height="796" rx="14" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="60" y="60" width="1080" height="780" rx="10" fill="none" stroke="rgba(56,189,248,0.15)" stroke-width="1.5" stroke-dasharray="8 6"/>
+
+  <!-- Corner Geometric Flourishes -->
+  <!-- Top Left -->
+  <path d="M 40 100 L 100 40 M 40 120 L 120 40 M 40 70 L 70 40" stroke="rgba(56,189,248,0.4)" stroke-width="1.5"/>
+  <circle cx="80" cy="80" r="4" fill="#38BDF8"/>
+  <!-- Top Right -->
+  <path d="M 1160 100 L 1100 40 M 1160 120 L 1080 40 M 1160 70 L 1130 40" stroke="rgba(56,189,248,0.4)" stroke-width="1.5"/>
+  <circle cx="1120" cy="80" r="4" fill="#38BDF8"/>
+  <!-- Bottom Left -->
+  <path d="M 40 800 L 100 860 M 40 780 L 120 860 M 40 830 L 70 860" stroke="rgba(56,189,248,0.4)" stroke-width="1.5"/>
+  <circle cx="80" cy="820" r="4" fill="#38BDF8"/>
+  <!-- Bottom Right -->
+  <path d="M 1160 800 L 1100 860 M 1160 780 L 1080 860 M 1160 830 L 1130 860" stroke="rgba(56,189,248,0.4)" stroke-width="1.5"/>
+  <circle cx="1120" cy="820" r="4" fill="#38BDF8"/>
+
+  <!-- Header Monogram & Organization Badge -->
+  <g transform="translate(600, 140)">
+    <!-- Small Crest Icon -->
+    <circle cx="0" cy="0" r="32" fill="#0F172A" stroke="url(#goldCyan)" stroke-width="2"/>
+    <path d="M -12 -8 L 0 -18 L 12 -8 L 12 12 L 0 18 L -12 12 Z" fill="none" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#38BDF8"/>
+
+    <text y="54" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="4" text-anchor="middle">
+      LEMBAGA SERTIFIKASI PROFESI / INDUSTRY PARTNER
+    </text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="250" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="700" letter-spacing="1" text-anchor="middle">
+    CERTIFICATE OF COMPETENCY
+  </text>
+  <text x="600" y="285" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="15" font-weight="500" letter-spacing="2" text-anchor="middle">
+    SERTIFIKAT KOMPETENSI KEAHLIAN REKAYASA PERANGKAT LUNAK
+  </text>
+
+  <!-- Decorative Separator Line -->
+  <line x1="450" y1="315" x2="750" y2="315" stroke="url(#goldCyan)" stroke-width="2"/>
+  <circle cx="600" cy="315" r="4" fill="#38BDF8"/>
+
+  <!-- Awarded to Notice -->
+  <text x="600" y="370" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">
+    This credential is officially conferred upon:
+  </text>
+
+  <!-- Recipient Name -->
+  <text x="600" y="430" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="800" letter-spacing="1" text-anchor="middle">
+    Muhammad Kevin Febrian
+  </text>
+
+  <!-- Competency Description & Standards -->
+  <text x="600" y="475" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="600" text-anchor="middle">
+    Field of Expertise: Software Engineering (Rekayasa Perangkat Lunak / RPL)
+  </text>
+
+  <g transform="translate(600, 520)">
+    <text y="0" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">
+      Demonstrated verified technical competency and high proficiency in fullstack software engineering,
+    </text>
+    <text y="24" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">
+      relational database architecture (MySQL), REST API systems, and modern interactive user interfaces.
+    </text>
+  </g>
+
+  <!-- Key Competencies Pills -->
+  <g transform="translate(600, 595)">
+    <g transform="translate(-360, 0)">
+      <rect width="220" height="36" rx="18" fill="#0F172A" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+      <text x="110" y="22" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">
+        Fullstack Web Engineering
+      </text>
+    </g>
+    <g transform="translate(-110, 0)">
+      <rect width="220" height="36" rx="18" fill="#0F172A" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+      <text x="110" y="22" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">
+        Database Architecture
+      </text>
+    </g>
+    <g transform="translate(140, 0)">
+      <rect width="220" height="36" rx="18" fill="#0F172A" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+      <text x="110" y="22" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">
+        REST API Integration
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Details & Verification Seal -->
+  <!-- Left Side: Issue Details -->
+  <g transform="translate(140, 710)">
+    <text y="0" fill="#64748B" font-family="'JetBrains Mono', monospace" font-size="11">ISSUE YEAR</text>
+    <text y="24" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">2026</text>
+    <line x1="0" y1="36" x2="180" y2="36" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text y="54" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Standard: BNSP / UKK RPL</text>
+  </g>
+
+  <!-- Center: Gold Official Embossed Seal -->
+  <g transform="translate(600, 725)">
+    <!-- Ribbons -->
+    <path d="M -24 35 L -36 85 L -14 75 L 0 85 L 0 35 Z" fill="#D97706" opacity="0.9"/>
+    <path d="M 24 35 L 36 85 L 14 75 L 0 85 L 0 35 Z" fill="#B45309" opacity="0.9"/>
+    <!-- Seal Medallion -->
+    <circle cx="0" cy="0" r="50" fill="url(#sealGold)" filter="url(#sealGlow)"/>
+    <circle cx="0" cy="0" r="44" fill="#090E24" stroke="#FCD34D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="38" fill="#0F172A" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4 2"/>
+    <text y="-8" fill="#FCD34D" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="1" text-anchor="middle">
+      VERIFIED
+    </text>
+    <text y="10" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" text-anchor="middle">
+      ★ 2026 ★
+    </text>
+    <text y="24" fill="#FCD34D" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" text-anchor="middle">
+      COMPETENT
+    </text>
+  </g>
+
+  <!-- Right Side: Authorized Verification -->
+  <g transform="translate(900, 710)">
+    <text y="0" fill="#64748B" font-family="'JetBrains Mono', monospace" font-size="11">STATUS / VERIFIKASI</text>
+    <text y="24" fill="#10B981" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">KOMPETEN (PASS)</text>
+    <line x1="0" y1="36" x2="180" y2="36" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text y="54" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">ID: CERT-2026-UKK-RPL-FK</text>
+  </g>
+
+</svg>

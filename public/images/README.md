@@ -22,3 +22,13 @@ All project thumbnails and case-study modal galleries automatically load from th
 
 - **Recommended Aspect Ratio:** 16:9 (e.g., 1920x1080 or 1280x720)
 - **Automatic Fallback:** If any `.jpg` file is missing, the application automatically falls back to the high-craft SVG graphic (`.svg`) without breaking the layout or displaying broken image icons.
+
+## 3. Certificates & Credentials (`public/images/certificates/`)
+Certificate thumbnails and high-resolution lightbox views load from this folder:
+
+| Certificate | Primary Image | Fallback File |
+|---|---|---|
+| **Software Engineering Competency Certification** | `cert-ukk-rpl.jpg` | `cert-ukk-rpl.svg` |
+
+- **Recommended Aspect Ratio:** 4:3 (e.g., 1600x1200 or 1200x900)
+- **Automatic Fallback:** If `cert-ukk-rpl.jpg` is not added yet, the site gracefully displays the built-in SVG credential preview and enables full-screen lightbox inspection.

@@ -1,4 +1,4 @@
-import type { Project, Experience, SkillCategory, GithubRepo } from '../types';
+import type { Project, Experience, Certificate, SkillCategory, GithubRepo } from '../types';
 
 export const personalInfo = {
   fullName: 'Muhammad Kevin Febrian',
@@ -440,6 +440,31 @@ export const projects: Project[] = [
     },
     images: ['/images/projects/borrowing-1.jpg'],
     fallbackImages: ['/images/projects/borrowing-1.svg'],
+  },
+];
+
+export const certificatesData: Certificate[] = [
+  {
+    id: 'cert-ukk-rpl',
+    title: {
+      en: 'Software Engineering Competency Certification',
+      id: 'Sertifikasi Kompetensi Keahlian RPL',
+    },
+    issuer: 'LSP / Industry Partner',
+    category: {
+      en: 'Competency Certification',
+      id: 'Sertifikasi Kompetensi',
+    },
+    date: '2026',
+    image: '/images/certificates/cert-ukk-rpl.jpg',
+    fallbackImage: '/images/certificates/cert-ukk-rpl.svg',
+    description: {
+      en: 'Certified competency in fullstack software engineering, database architecture, and web application development.',
+      id: 'Sertifikasi kompetensi keahlian di bidang rekayasa perangkat lunak fullstack, perancangan basis data, dan pengembangan aplikasi web.',
+    },
+    skills: ['Fullstack Web', 'MySQL Database', 'REST APIs', 'Software Architecture', 'Clean Code'],
+    credentialId: 'CERT-2026-UKK-RPL-FK',
+    verified: true,
   },
 ];
 
