@@ -90,6 +90,7 @@ export interface Certificate {
   };
   skills?: string[];
   credentialId?: string;
+  registrationId?: string;
   credentialUrl?: string;
   verified?: boolean;
 }

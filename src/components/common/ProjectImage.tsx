@@ -8,7 +8,8 @@ interface ProjectImageProps {
   className?: string;
   title?: string;
   badge?: string;
-  aspectRatio?: '16/9' | '4/3' | '1/1';
+  aspectRatio?: '16/9' | '4/3' | '3/4' | '1/1' | 'auto';
+  objectFit?: 'cover' | 'contain';
 }
 
 export const ProjectImage: React.FC<ProjectImageProps> = ({
@@ -19,6 +20,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   title,
   badge,
   aspectRatio = '16/9',
+  objectFit = 'cover',
 }) => {
   const [currentSrc, setCurrentSrc] = useState<string>(src);
   const [failedOriginal, setFailedOriginal] = useState<boolean>(false);
@@ -44,7 +46,13 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
       ? 'aspect-[16/9]'
       : aspectRatio === '4/3'
       ? 'aspect-[4/3]'
+      : aspectRatio === '3/4'
+      ? 'aspect-[3/4]'
+      : aspectRatio === 'auto'
+      ? 'aspect-auto'
       : 'aspect-square';
+
+  const fitClass = objectFit === 'contain' ? 'object-contain' : 'object-cover object-top';
 
   if (failedAll) {
     return (
@@ -84,7 +92,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
         loading="lazy"
         onError={handleError}
         onLoad={handleLoad}
-        className={`w-full h-full object-cover object-top transition-all duration-700 ${
+        className={`w-full h-full ${fitClass} transition-all duration-700 ${
           isLoading ? 'opacity-0 scale-98 blur-sm' : 'opacity-100 scale-100 blur-0'
         }`}
       />

@@ -445,25 +445,26 @@ export const projects: Project[] = [
 
 export const certificatesData: Certificate[] = [
   {
-    id: 'cert-ukk-rpl',
+    id: 'cert-bnsp-web-programmer',
     title: {
-      en: 'Software Engineering Competency Certification',
-      id: 'Sertifikasi Kompetensi Keahlian RPL',
+      en: 'Junior Web Programmer (Pemrogram Web Pratama) — BNSP',
+      id: 'Sertifikasi Kompetensi Pemrogram Web Pratama (BNSP)',
     },
-    issuer: 'LSP / Industry Partner',
+    issuer: 'BNSP & LSP Teknologi Digital',
     category: {
-      en: 'Competency Certification',
-      id: 'Sertifikasi Kompetensi',
+      en: 'National Competency Certification (BNSP)',
+      id: 'Sertifikasi Kompetensi Nasional (BNSP)',
     },
-    date: '2026',
+    date: '06 Mei 2026',
     image: '/images/certificates/cert-ukk-rpl.jpg',
     fallbackImage: '/images/certificates/cert-ukk-rpl.svg',
     description: {
-      en: 'Certified competency in fullstack software engineering, database architecture, and web application development.',
-      id: 'Sertifikasi kompetensi keahlian di bidang rekayasa perangkat lunak fullstack, perancangan basis data, dan pengembangan aplikasi web.',
+      en: 'Official National Competency Certification in Web Development (Junior Web Programmer / Pemrogram Web Pratama), conferred by Badan Nasional Sertifikasi Profesi (BNSP) through Lembaga Sertifikasi Profesi (LSP) Teknologi Digital.',
+      id: 'Sertifikat Kompetensi resmi tingkat nasional pada bidang Pengembangan Website dengan kualifikasi Pemrogram Web Pratama (Junior Web Programmer), diterbitkan atas nama Badan Nasional Sertifikasi Profesi (BNSP) melalui LSP Teknologi Digital.',
     },
-    skills: ['Fullstack Web', 'MySQL Database', 'REST APIs', 'Software Architecture', 'Clean Code'],
-    credentialId: 'CERT-2026-UKK-RPL-FK',
+    skills: ['Pengembangan Website', 'Junior Web Programmer', 'Frontend & Backend', 'MySQL Database', 'REST APIs', 'Clean Code'],
+    credentialId: '62090 2513 3 0180319 2026',
+    registrationId: 'TIK 1565 65008 2026',
     verified: true,
   },
 ];

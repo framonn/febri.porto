@@ -9,6 +9,7 @@ import {
   Building2,
   ShieldCheck,
   Tag,
+  Hash,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { certificatesData } from '../data/portfolioData';
@@ -56,7 +57,7 @@ export const Certificates: React.FC = () => {
         <div
           className={
             isSingle
-              ? 'max-w-4xl mx-auto'
+              ? 'max-w-5xl mx-auto'
               : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
           }
         >
@@ -79,11 +80,11 @@ export const Certificates: React.FC = () => {
                 {/* Single Featured Spotlight Layout (Split 2-Column Desktop) */}
                 <div className={isSingle ? 'grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center' : 'space-y-6'}>
                   
-                  {/* Certificate Thumbnail with Aspect [4/3] & Hover Zoom */}
+                  {/* Certificate Thumbnail with Aspect [3/4] & Hover Zoom */}
                   <div
                     onClick={() => setSelectedCert(cert)}
-                    className={`relative rounded-2xl overflow-hidden border border-electric-sky/20 bg-navy-950 cursor-pointer shadow-inner group/thumb ${
-                      isSingle ? 'lg:col-span-6' : 'w-full'
+                    className={`relative rounded-2xl overflow-hidden border border-electric-sky/20 bg-navy-950 cursor-pointer shadow-inner group/thumb max-w-sm mx-auto lg:max-w-none ${
+                      isSingle ? 'lg:col-span-5' : 'w-full'
                     }`}
                   >
                     <ProjectImage
@@ -92,12 +93,13 @@ export const Certificates: React.FC = () => {
                       alt={title}
                       title={title}
                       badge={category}
-                      aspectRatio="4/3"
-                      className="group-hover/thumb:scale-105 transition-transform duration-500"
+                      aspectRatio="3/4"
+                      objectFit="contain"
+                      className="group-hover/thumb:scale-105 transition-transform duration-500 bg-navy-950/90"
                     />
 
                     {/* Gradient Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-60 group-hover/thumb:opacity-40 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-40 group-hover/thumb:opacity-20 transition-opacity pointer-events-none" />
 
                     {/* Verified Ribbon Badge Top Left */}
                     <div className="absolute top-3 left-3 z-10">
@@ -117,7 +119,7 @@ export const Certificates: React.FC = () => {
                   </div>
 
                   {/* Certificate Details Column */}
-                  <div className={isSingle ? 'lg:col-span-6 flex flex-col justify-between' : 'space-y-4'}>
+                  <div className={isSingle ? 'lg:col-span-7 flex flex-col justify-between' : 'space-y-4'}>
                     <div>
                       {/* Category & Status Pills */}
                       <div className="flex flex-wrap items-center gap-2.5 mb-3">
@@ -143,19 +145,32 @@ export const Certificates: React.FC = () => {
                       </p>
 
                       {/* Issuer & Metadata Box */}
-                      <div className="p-4 rounded-2xl bg-navy-950/70 border border-slate-800 mb-6 space-y-2">
-                        <div className="flex items-center justify-between text-xs font-mono">
+                      <div className="p-4 rounded-2xl bg-navy-950/70 border border-slate-800 mb-6 space-y-2.5">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono gap-1">
                           <span className="text-slate-400 flex items-center gap-1.5">
-                            <Building2 className="w-3.5 h-3.5 text-electric-sky" />
+                            <Building2 className="w-3.5 h-3.5 text-electric-sky shrink-0" />
                             <span>{t.certificates.issuedBy}:</span>
                           </span>
                           <span className="font-semibold text-slate-200">{cert.issuer}</span>
                         </div>
 
                         {cert.credentialId && (
-                          <div className="flex items-center justify-between text-xs font-mono pt-2 border-t border-slate-800/80">
-                            <span className="text-slate-400">Credential ID:</span>
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono pt-2 border-t border-slate-800/80 gap-1">
+                            <span className="text-slate-400 flex items-center gap-1.5">
+                              <Hash className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                              <span>No. Sertifikat:</span>
+                            </span>
                             <span className="text-electric-sky font-semibold">{cert.credentialId}</span>
+                          </div>
+                        )}
+
+                        {cert.registrationId && (
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono pt-2 border-t border-slate-800/80 gap-1">
+                            <span className="text-slate-400 flex items-center gap-1.5">
+                              <Hash className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                              <span>No. Reg:</span>
+                            </span>
+                            <span className="text-slate-300 font-semibold">{cert.registrationId}</span>
                           </div>
                         )}
                       </div>
@@ -215,7 +230,7 @@ export const Certificates: React.FC = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-navy-900 border border-electric-sky/30 shadow-2xl z-10 text-slate-100 flex flex-col"
+              className="relative w-full max-w-4xl max-h-[94vh] overflow-y-auto rounded-3xl bg-navy-900 border border-electric-sky/30 shadow-2xl z-10 text-slate-100 flex flex-col"
             >
               {/* Sticky Modal Header */}
               <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-navy-900/95 backdrop-blur-md border-b border-electric-sky/15">
@@ -249,24 +264,32 @@ export const Certificates: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="relative rounded-2xl overflow-hidden border border-electric-sky/25 bg-navy-950 shadow-2xl">
-                  <ProjectImage
+                {/* Full-view Portrait Certificate Frame */}
+                <div className="relative rounded-2xl overflow-hidden border border-electric-sky/25 bg-navy-950/80 shadow-2xl flex items-center justify-center p-2 sm:p-4">
+                  <img
                     src={selectedCert.image}
-                    fallbackSrc={selectedCert.fallbackImage}
                     alt={language === 'EN' ? selectedCert.title.en : selectedCert.title.id}
-                    title={language === 'EN' ? selectedCert.title.en : selectedCert.title.id}
-                    badge={language === 'EN' ? selectedCert.category.en : selectedCert.category.id}
-                    aspectRatio="4/3"
-                    className="w-full"
+                    className="max-h-[76vh] w-auto max-w-full object-contain rounded-xl shadow-2xl border border-slate-800"
+                    onError={(e) => {
+                      if ((e.target as HTMLImageElement).src !== selectedCert.fallbackImage) {
+                        (e.target as HTMLImageElement).src = selectedCert.fallbackImage;
+                      }
+                    }}
                   />
                 </div>
 
                 {/* Footer details in modal */}
                 <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                     <span className="text-slate-300 font-semibold">{selectedCert.issuer}</span>
                     <span>•</span>
-                    <span>{selectedCert.credentialId || 'Verified Credential'}</span>
+                    <span className="text-electric-sky font-mono">{selectedCert.credentialId || 'Verified Credential'}</span>
+                    {selectedCert.registrationId && (
+                      <>
+                        <span>•</span>
+                        <span className="text-slate-400">{selectedCert.registrationId}</span>
+                      </>
+                    )}
                   </div>
 
                   <button
