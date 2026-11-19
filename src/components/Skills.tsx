@@ -62,7 +62,7 @@ export const Skills: React.FC = () => {
           </p>
         </div>
 
-        {/* Core Stack Spotlight Banner: Python & React */}
+        {/* Core Stack Spotlight Banner: Python Primary */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,42 +80,30 @@ export const Skills: React.FC = () => {
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white font-space">
                 {language === 'EN'
-                  ? 'Python First, Powered by Modern React'
-                  : 'Fokus Utama: Python, Didukung Ekosistem Modern React'}
+                  ? 'Python — Primary Language & Core Focus'
+                  : 'Python — Bahasa Utama & Fokus Teknis'}
               </h3>
               <p className="text-sm text-slate-300 mt-1">
                 {language === 'EN'
-                  ? 'Combining Python backend algorithms, automated data processing, and robust logic with fluid, reactive web frontends.'
-                  : 'Menggabungkan logika algoritma Python, pemrosesan data otomatis, dan keandalan backend dengan antarmuka web modern yang responsif.'}
+                  ? 'Specialized in Python for backend logic, data processing pipelines, and automated systems — the core of my technical identity.'
+                  : 'Menguasai Python untuk logika backend, pipeline pemrosesan data, dan sistem otomasi — inti dari identitas teknis saya.'}
               </p>
             </div>
 
-            <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 w-full lg:w-auto">
-              {/* Python Card */}
-              <div className="flex-1 sm:w-56 p-4 rounded-2xl bg-navy-950/90 border border-electric-sky/40 shadow-inner flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-electric-blue/25 border border-electric-sky/40 flex items-center justify-center font-bold text-electric-sky text-base">
+            <div className="flex items-center gap-4 w-full lg:w-auto">
+              {/* Python Card — full width since it's the solo highlight */}
+              <div className="flex-1 lg:w-72 p-5 rounded-2xl bg-navy-950/90 border border-electric-sky/40 shadow-inner flex items-center gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-electric-blue/25 border border-electric-sky/40 flex items-center justify-center font-bold text-electric-sky text-xl shadow-glow-sm">
                   Py
                 </div>
                 <div>
                   <span className="text-xs font-mono text-emerald-400 block font-semibold">
-                    #1 {language === 'EN' ? 'Primary Focus' : 'Keahlian Utama'}
+                    {language === 'EN' ? '✦ Primary Focus' : '✦ Keahlian Utama'}
                   </span>
-                  <span className="text-sm font-bold text-white font-space">Python</span>
-                  <span className="text-[11px] text-slate-400 block font-mono">Backend & Logic</span>
-                </div>
-              </div>
-
-              {/* React Card */}
-              <div className="flex-1 sm:w-56 p-4 rounded-2xl bg-navy-950/90 border border-electric-cyan/40 shadow-inner flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-electric-cyan/25 border border-electric-cyan/40 flex items-center justify-center font-bold text-electric-cyan text-base">
-                  Re
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-electric-sky block font-semibold">
-                    #2 {language === 'EN' ? 'Frontend Core' : 'Frontend Utama'}
+                  <span className="text-lg font-bold text-white font-space">Python</span>
+                  <span className="text-xs text-slate-400 block font-mono mt-0.5">
+                    Backend · Data Processing · Automation · Logic
                   </span>
-                  <span className="text-sm font-bold text-white font-space">React JS</span>
-                  <span className="text-[11px] text-slate-400 block font-mono">UI Architecture</span>
                 </div>
               </div>
             </div>

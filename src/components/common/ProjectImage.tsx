@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Layers, Image as ImageIcon } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Image as ImageIcon } from 'lucide-react';
 
 interface ProjectImageProps {
   src: string;
@@ -27,10 +27,19 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   const [failedAll, setFailedAll] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Synchronize state whenever src or fallbackSrc changes
+  useEffect(() => {
+    setCurrentSrc(src);
+    setFailedOriginal(false);
+    setFailedAll(false);
+    setIsLoading(true);
+  }, [src, fallbackSrc]);
+
   const handleError = () => {
     if (!failedOriginal && fallbackSrc && fallbackSrc !== currentSrc) {
       setFailedOriginal(true);
       setCurrentSrc(fallbackSrc);
+      setIsLoading(true);
     } else {
       setFailedAll(true);
       setIsLoading(false);
@@ -57,23 +66,21 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   if (failedAll) {
     return (
       <div
-        className={`relative w-full ${aspectClass} overflow-hidden rounded-xl bg-navy-900/80 border border-electric-sky/20 flex flex-col items-center justify-center p-6 text-center select-none ${className}`}
+        className={`relative w-full ${aspectClass} overflow-hidden rounded-xl bg-navy-900/80 border border-electric-sky/20 flex flex-col items-center justify-center p-4 text-center select-none ${className}`}
       >
-        <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
         <div className="relative z-10 flex flex-col items-center">
-          <div className="w-12 h-12 rounded-xl bg-electric-blue/10 border border-electric-sky/30 flex items-center justify-center text-electric-sky mb-3 shadow-glow-sm">
-            <ImageIcon className="w-6 h-6" />
+          <div className="w-10 h-10 rounded-xl bg-electric-blue/10 border border-electric-sky/30 flex items-center justify-center text-electric-sky mb-2 shadow-glow-sm">
+            <ImageIcon className="w-5 h-5" />
           </div>
-          <h4 className="text-sm font-semibold text-slate-200 line-clamp-1 mb-1 font-space">
+          <h4 className="text-xs sm:text-sm font-semibold text-slate-200 line-clamp-1 mb-1 font-space">
             {title || alt}
           </h4>
-          <span className="text-xs text-slate-400 font-mono mb-3">
-            {badge || 'Interactive Project Preview'}
-          </span>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-navy-800/90 border border-slate-700/60 text-[11px] text-slate-400 font-mono">
-            <Layers className="w-3 h-3 text-electric-sky" />
-            <span>Drop image to {src}</span>
-          </div>
+          {badge && (
+            <span className="text-[10px] sm:text-xs text-slate-400 font-mono">
+              {badge}
+            </span>
+          )}
         </div>
       </div>
     );

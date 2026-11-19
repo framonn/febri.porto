@@ -17,6 +17,7 @@ import { GithubIcon } from './common/Icons';
 import type { Project } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 import { ProjectImage } from './common/ProjectImage';
+import { useProjectMedia } from '../utils/projectMedia';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -28,29 +29,32 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
   const { language, t } = useLanguage();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  // Auto-detect project photos (1, 2, 3, 4... etc.)
+  const { images, fallbacks } = useProjectMedia(project);
+
   useEffect(() => {
     setActiveImageIndex(0);
-  }, [project]);
+  }, [project?.id]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isOpen || !project) return;
+      if (!isOpen || !project || images.length <= 1) return;
       if (e.key === 'Escape') onClose();
       if (e.key === 'ArrowRight') {
-        setActiveImageIndex((prev) => (prev + 1) % project.images.length);
+        setActiveImageIndex((prev) => (prev + 1) % images.length);
       }
       if (e.key === 'ArrowLeft') {
-        setActiveImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+        setActiveImageIndex((prev) => (prev - 1 + images.length) % images.length);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, project, onClose]);
+  }, [isOpen, project, onClose, images.length]);
 
   if (!isOpen || !project) return null;
 
-  const currentImage = project.images[activeImageIndex] || project.images[0];
-  const currentFallback = project.fallbackImages[activeImageIndex] || project.fallbackImages[0];
+  const currentImage = images[activeImageIndex] || images[0] || project.images[0];
+  const currentFallback = fallbacks[activeImageIndex] || fallbacks[0] || project.fallbackImages[0];
 
   return (
     <AnimatePresence>
@@ -120,12 +124,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                 />
 
                 {/* Left/Right Carousel Controls */}
-                {project.images.length > 1 && (
+                {images.length > 1 && (
                   <>
                     <button
                       onClick={() =>
                         setActiveImageIndex(
-                          (prev) => (prev - 1 + project.images.length) % project.images.length
+                          (prev) => (prev - 1 + images.length) % images.length
                         )
                       }
                       className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-navy-950/80 hover:bg-navy-900 border border-electric-sky/30 text-white shadow-lg backdrop-blur-md opacity-90 hover:opacity-100 transition-all hover:scale-110"
@@ -135,7 +139,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                     </button>
                     <button
                       onClick={() =>
-                        setActiveImageIndex((prev) => (prev + 1) % project.images.length)
+                        setActiveImageIndex((prev) => (prev + 1) % images.length)
                       }
                       className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-navy-950/80 hover:bg-navy-900 border border-electric-sky/30 text-white shadow-lg backdrop-blur-md opacity-90 hover:opacity-100 transition-all hover:scale-110"
                       aria-label={t.projects.modal.nextImage}
@@ -145,29 +149,35 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
 
                     {/* Image Counter Badge */}
                     <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md border border-slate-700 text-xs font-mono text-slate-300">
-                      {activeImageIndex + 1} / {project.images.length}
+                      {activeImageIndex + 1} / {images.length}
                     </div>
                   </>
                 )}
               </div>
 
-              {/* Thumbnails row */}
-              {project.images.length > 1 && (
+              {/* Thumbnails row — uses actual photo src, NOT the svg fallback */}
+              {images.length > 1 && (
                 <div className="flex items-center gap-3 overflow-x-auto pb-1">
-                  {project.images.map((img, idx) => (
+                  {images.map((img, idx) => (
                     <button
-                      key={img}
+                      key={`${img}-${idx}`}
                       onClick={() => setActiveImageIndex(idx)}
-                      className={`relative w-24 aspect-[16/9] rounded-lg overflow-hidden border-2 transition-all ${
+                      className={`relative shrink-0 w-24 aspect-[16/9] rounded-lg overflow-hidden border-2 transition-all ${
                         activeImageIndex === idx
                           ? 'border-electric-sky scale-105 shadow-glow-sm'
                           : 'border-slate-800 opacity-60 hover:opacity-100'
                       }`}
                     >
                       <img
-                        src={project.fallbackImages[idx] || img}
-                        alt="thumbnail"
+                        src={img}
+                        alt={`${project.title} preview ${idx + 1}`}
                         className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (fallbacks[idx] && target.src !== fallbacks[idx]) {
+                            target.src = fallbacks[idx];
+                          }
+                        }}
                       />
                     </button>
                   ))}
