@@ -28,15 +28,8 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-10 border-b border-slate-800">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-electric-blue to-electric-cyan p-[1px] shadow-glow-sm">
-                <div className="w-full h-full bg-navy-950 rounded-[11px] flex items-center justify-center">
-                  <span className="font-mono text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-electric-sky to-electric-cyan">
-                    FK.
-                  </span>
-                </div>
-              </div>
-              <span className="font-space font-bold tracking-tight text-lg text-white">
-                febri<span className="text-electric-cyan">.dev</span>
+              <span className="font-space font-bold tracking-tight text-lg sm:text-xl text-white">
+                febri<span className="text-electric-cyan">.porto</span>
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 font-normal">

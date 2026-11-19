@@ -42,18 +42,9 @@ export const Navbar: React.FC = () => {
             href="#"
             className="group flex items-center gap-2 text-slate-100 hover:text-white transition-colors"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-electric-blue to-electric-cyan p-[1px] shadow-glow-sm group-hover:shadow-glow-md transition-shadow">
-              <div className="w-full h-full bg-navy-950 rounded-[11px] flex items-center justify-center">
-                <span className="font-mono text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-electric-sky to-electric-cyan">
-                  FK.
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-space font-bold tracking-tight text-base sm:text-lg text-slate-100 group-hover:text-electric-sky transition-colors">
-                febri<span className="text-electric-cyan">.dev</span>
-              </span>
-            </div>
+            <span className="font-space font-bold tracking-tight text-lg sm:text-xl text-slate-100 group-hover:text-electric-sky transition-colors">
+              febri<span className="text-electric-cyan">.porto</span>
+            </span>
           </a>
 
           {/* Desktop Navigation Links */}

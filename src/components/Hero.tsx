@@ -144,7 +144,7 @@ export const Hero: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-1 text-[11px] font-mono text-slate-400">
                     <Terminal className="w-3 h-3 text-electric-sky" />
-                    <span>febri.dev / bio.tsx</span>
+                    <span>febri.porto / bio.tsx</span>
                   </div>
                   <div className="w-4" />
                 </div>
