@@ -185,7 +185,7 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
       statCode: 'Python & Clean Code',
       floatingBadge1: 'Fullstack Dev',
       floatingBadge2: 'Python',
-      floatingBadge3: 'UI/UX Sensitivity',
+      floatingBadge3: 'UI/UX',
     },
     about: {
       sectionBadge: 'Behind the Code',
@@ -344,7 +344,7 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
       statCode: 'Python & Kode Bersih',
       floatingBadge1: 'Fullstack Dev',
       floatingBadge2: 'Python',
-      floatingBadge3: 'Sensitivitas UI/UX',
+      floatingBadge3: 'UI/UX',
     },
     about: {
       sectionBadge: 'Di Balik Kode',
