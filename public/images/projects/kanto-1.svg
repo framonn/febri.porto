@@ -38,74 +38,76 @@
     
     <!-- Window Title -->
     <text x="540" y="30" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="500">
-      KantO • Digital School Canteen — System Preview
+      KantO • School Canteen Mobile App Design — System Preview
     </text>
 
     <!-- Top Badge -->
     <rect x="910" y="14" width="150" height="22" rx="11" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
     <text x="985" y="29" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="600">
-      Fullstack & Product Design
+      Mobile UI/UX & Product Design
     </text>
 
     <!-- Inner Content Area -->
     <g transform="translate(32, 70)">
       
-  <g transform="translate(0, 15)">
-    <rect x="0" y="0" width="1010" height="425" rx="12" fill="#131E47" fill-opacity="0.4" stroke="rgba(56, 189, 248, 0.15)"/>
-    <text x="30" y="40" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600">Digital Canteen Marketplace & Order Terminal</text>
-    <text x="30" y="65" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Pre-order breaktime meals, student coin rewards, queue management, and merchant sales</text>
+  <g transform="translate(30, 15)">
+    <!-- Mobile App Mockup Frame 1: Home & Stall Menu -->
+    <g transform="translate(40, 0)">
+      <rect width="250" height="420" rx="30" fill="#0A0F1D" stroke="#F59E0B" stroke-width="2"/>
+      <rect x="85" y="12" width="80" height="16" rx="8" fill="#1E293B"/>
+      
+      <!-- Inner phone content -->
+      <g transform="translate(15, 45)">
+        <text x="15" y="25" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">KantO App</text>
+        <text x="15" y="42" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="11">Digital Canteen Pre-order</text>
 
-    <!-- Menu Food Grid -->
-    <g transform="translate(30, 95)">
-      <!-- Item 1 -->
-      <g>
-        <rect width="215" height="230" rx="10" fill="#1E293B" fill-opacity="0.6" stroke="rgba(255,255,255,0.06)"/>
-        <rect x="15" y="15" width="185" height="100" rx="8" fill="#0D1536"/>
-        <text x="107" y="70" fill="#F59E0B" font-family="'Space Grotesk', sans-serif" font-size="16" text-anchor="middle" font-weight="700">Nasi Goreng Spesial</text>
-        <text x="20" y="145" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Rp 15.000</text>
-        <text x="20" y="165" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="11">★ 4.9 (124 reviews)</text>
-        <rect x="20" y="185" width="175" height="30" rx="6" fill="#F59E0B"/>
-        <text x="107" y="205" fill="#000" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="700">+ Add to Tray</text>
-      </g>
-      <!-- Item 2 -->
-      <g transform="translate(245, 0)">
-        <rect width="215" height="230" rx="10" fill="#1E293B" fill-opacity="0.6" stroke="rgba(255,255,255,0.06)"/>
-        <rect x="15" y="15" width="185" height="100" rx="8" fill="#0D1536"/>
-        <text x="107" y="70" fill="#38BDF8" font-family="'Space Grotesk', sans-serif" font-size="16" text-anchor="middle" font-weight="700">Ayam Geprek Sambal</text>
-        <text x="20" y="145" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Rp 18.000</text>
-        <text x="20" y="165" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="11">★ 4.8 (98 reviews)</text>
-        <rect x="20" y="185" width="175" height="30" rx="6" fill="#F59E0B"/>
-        <text x="107" y="205" fill="#000" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="700">+ Add to Tray</text>
-      </g>
-      <!-- Item 3 -->
-      <g transform="translate(490, 0)">
-        <rect width="215" height="230" rx="10" fill="#1E293B" fill-opacity="0.6" stroke="rgba(255,255,255,0.06)"/>
-        <rect x="15" y="15" width="185" height="100" rx="8" fill="#0D1536"/>
-        <text x="107" y="70" fill="#10B981" font-family="'Space Grotesk', sans-serif" font-size="16" text-anchor="middle" font-weight="700">Dimsum Ayam 4pcs</text>
-        <text x="20" y="145" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Rp 12.000</text>
-        <text x="20" y="165" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="11">★ 4.7 (76 reviews)</text>
-        <rect x="20" y="185" width="175" height="30" rx="6" fill="#F59E0B"/>
-        <text x="107" y="205" fill="#000" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" font-weight="700">+ Add to Tray</text>
-      </g>
-      <!-- Cart summary side -->
-      <g transform="translate(735, 0)">
-        <rect width="215" height="230" rx="10" fill="#0A0F1D" stroke="rgba(56,189,248,0.2)"/>
-        <text x="15" y="30" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">Active Order #KNT-42</text>
-        <text x="15" y="55" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Pickup: 10:15 WIB (Istirahat)</text>
-        <text x="15" y="90" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">1x Nasi Goreng Spesial</text>
-        <text x="15" y="115" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">1x Es Teh Manis</text>
-        <text x="15" y="150" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">Total: Rp 20.000</text>
-        <rect x="15" y="175" width="185" height="38" rx="6" fill="#38BDF8"/>
-        <text x="107" y="199" fill="#050814" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" font-weight="700">CONFIRM & PAY</text>
+        <!-- Food Card 1 -->
+        <g transform="translate(10, 60)">
+          <rect width="200" height="110" rx="12" fill="#1E293B" stroke="rgba(245,158,11,0.3)"/>
+          <text x="15" y="30" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">Nasi Goreng Spesial</text>
+          <text x="15" y="52" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Rp 15.000</text>
+          <rect x="15" y="70" width="80" height="24" rx="6" fill="#F59E0B"/>
+          <text x="55" y="86" fill="#000" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle" font-weight="700">+ Pesan</text>
+        </g>
+
+        <!-- Food Card 2 -->
+        <g transform="translate(10, 185)">
+          <rect width="200" height="110" rx="12" fill="#1E293B" stroke="rgba(56,189,248,0.3)"/>
+          <text x="15" y="30" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">Ayam Geprek Sambal</text>
+          <text x="15" y="52" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Rp 18.000</text>
+          <rect x="15" y="70" width="80" height="24" rx="6" fill="#38BDF8"/>
+          <text x="55" y="86" fill="#000" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle" font-weight="700">+ Pesan</text>
+        </g>
+
+        <!-- Bottom bar -->
+        <rect x="10" y="315" width="200" height="35" rx="10" fill="#F59E0B"/>
+        <text x="110" y="337" fill="#000" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" font-weight="700">Buka Keranjang (2 Item)</text>
       </g>
     </g>
 
-    <!-- Bottom strip -->
-    <g transform="translate(30, 350)">
-      <rect width="950" height="50" rx="8" fill="#1E293B" fill-opacity="0.4"/>
-      <text x="25" y="30" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">
-        Tech Stack: PHP, MySQL, JavaScript, Tailwind CSS • Features: QR code pick-up token, vendor order dashboard.
-      </text>
+    <!-- Right Side Explanations (UI/UX Case Study Breakdown) -->
+    <g transform="translate(350, 20)">
+      <rect width="590" height="380" rx="14" fill="#131E47" fill-opacity="0.4" stroke="rgba(56, 189, 248, 0.15)"/>
+      <text x="30" y="45" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">Figma Mobile UI/UX & Product Design</text>
+      <text x="30" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">High-fidelity interactive mobile prototype designed to solve break-time school cafeteria crowding.</text>
+
+      <g transform="translate(30, 110)">
+        <rect width="530" height="60" rx="8" fill="#1E293B" fill-opacity="0.6"/>
+        <text x="20" y="26" fill="#F59E0B" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600">Pre-Ordering & Pickup Slot Workflow</text>
+        <text x="20" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">Intuitive user journeys allowing students to pre-order meals before recess bell rings.</text>
+      </g>
+
+      <g transform="translate(30, 185)">
+        <rect width="530" height="60" rx="8" fill="#1E293B" fill-opacity="0.6"/>
+        <text x="20" y="26" fill="#38BDF8" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600">Gamified Student Reward Coins</text>
+        <text x="20" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">Digital point wallet system incentivizing cashless habits and quick counter collections.</text>
+      </g>
+
+      <g transform="translate(30, 260)">
+        <rect width="530" height="60" rx="8" fill="#1E293B" fill-opacity="0.6"/>
+        <text x="20" y="26" fill="#10B981" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600">Component Design System in Figma</text>
+        <text x="20" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="11">Mobile-first components, interactive micro-states, typography scale, and color hierarchy.</text>
+      </g>
     </g>
   </g>
   

@@ -50,7 +50,7 @@ export const Skills: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-start max-w-3xl mb-16">
+        <div className="flex flex-col items-start max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-electric-sky/20 text-electric-sky text-xs font-mono font-semibold tracking-wide uppercase mb-3">
             <span>{t.skills.sectionBadge}</span>
           </div>
@@ -61,6 +61,66 @@ export const Skills: React.FC = () => {
             {t.skills.subtitle}
           </p>
         </div>
+
+        {/* Core Stack Spotlight Banner: Python & React */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-electric-blue/15 via-navy-900/90 to-electric-cyan/15 border border-electric-sky/30 backdrop-blur-xl shadow-glow-sm"
+        >
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric-blue/20 text-electric-sky border border-electric-sky/30 text-xs font-mono font-semibold uppercase mb-2">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>
+                  {language === 'EN' ? 'Primary Technical Stack' : 'Penguasaan Teknis Utama'}
+                </span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-space">
+                {language === 'EN'
+                  ? 'Python First, Powered by Modern React'
+                  : 'Fokus Utama: Python, Didukung Ekosistem Modern React'}
+              </h3>
+              <p className="text-sm text-slate-300 mt-1">
+                {language === 'EN'
+                  ? 'Combining Python backend algorithms, automated data processing, and robust logic with fluid, reactive web frontends.'
+                  : 'Menggabungkan logika algoritma Python, pemrosesan data otomatis, dan keandalan backend dengan antarmuka web modern yang responsif.'}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 w-full lg:w-auto">
+              {/* Python Card */}
+              <div className="flex-1 sm:w-56 p-4 rounded-2xl bg-navy-950/90 border border-electric-sky/40 shadow-inner flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-electric-blue/25 border border-electric-sky/40 flex items-center justify-center font-bold text-electric-sky text-base">
+                  Py
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-emerald-400 block font-semibold">
+                    #1 {language === 'EN' ? 'Primary Focus' : 'Keahlian Utama'}
+                  </span>
+                  <span className="text-sm font-bold text-white font-space">Python</span>
+                  <span className="text-[11px] text-slate-400 block font-mono">Backend & Logic</span>
+                </div>
+              </div>
+
+              {/* React Card */}
+              <div className="flex-1 sm:w-56 p-4 rounded-2xl bg-navy-950/90 border border-electric-cyan/40 shadow-inner flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-electric-cyan/25 border border-electric-cyan/40 flex items-center justify-center font-bold text-electric-cyan text-base">
+                  Re
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-electric-sky block font-semibold">
+                    #2 {language === 'EN' ? 'Frontend Core' : 'Frontend Utama'}
+                  </span>
+                  <span className="text-sm font-bold text-white font-space">React JS</span>
+                  <span className="text-[11px] text-slate-400 block font-mono">UI Architecture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* 4 Categorized Bento Skill Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
