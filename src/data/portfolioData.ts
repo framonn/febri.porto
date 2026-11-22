@@ -110,52 +110,58 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: 'wms-pt-kia',
-    title: 'Employee Attendance Data Processing System — PT. Kokoh Inti Arebama (Gresik)',
+    title: 'Warehouse Management System (WMS) — PT. Kokoh Inti Arebama',
     category: 'industry',
     categoryBadge: {
-      en: 'Tugas Akhir • Industry Collaboration (Gresik)',
-      id: 'Tugas Akhir • Kolaborasi Industri (Gresik)',
+      en: 'Tugas Akhir • Implemented',
+      id: 'Tugas Akhir • Terimplementasi',
     },
     summary: {
-      en: 'An automated employee attendance data processing and timesheet recapitulation system engineered in collaboration with PT. Kokoh Inti Arebama (Gresik distribution hub) to streamline shift calculations and monthly payroll readiness.',
-      id: 'Sistem pengolahan dan rekapitulasi data absensi karyawan otomatis yang dibangun dalam kolaborasi dengan PT. Kokoh Inti Arebama (hub distribusi Gresik) untuk menyederhanakan kalkulasi shift dan kesiapan penggajian bulanan.',
+      en: 'Digital warehouse inventory & logistics management platform engineered to automate inbound/outbound logging and real-time stock monitoring.',
+      id: 'Sistem manajemen pergudangan & logistik berbasis web yang mengotomatisasi pencatatan barang masuk/keluar dan pemantauan stok real-time.',
     },
     description: {
-      en: 'Developed in partnership with PT. Kokoh Inti Arebama for their Gresik distribution hub, this system solves the challenge of manual attendance logging across multi-shift staff. Built as a comprehensive Capstone Project (Tugas Akhir), the platform ingests raw punch logs, validates presence, computes precise work hours and overtime, and delivers verified attendance summaries for HR.',
-      id: 'Dikembangkan melalui kemitraan dengan PT. Kokoh Inti Arebama untuk pusat distribusi Gresik, sistem ini menjawab tantangan rekap presensi manual pada staf dengan berbagai jadwal shift kerja. Dibangun sebagai Tugas Akhir komprehensif, platform ini memproses log data mentah mesin absensi, memvalidasi kehadiran, menghitung jam kerja dan lembur secara presisi, serta menyajikan rekap terverifikasi untuk HR.',
+      en: 'Developed in partnership with PT. Kokoh Inti Arebama for their distribution operations, this system solves the challenge of manual inventory audits and decentralized tracking. Built as a comprehensive Capstone Project (Tugas Akhir), the platform ingests logistics manifests, validates stock movements, computes bin allocations, and delivers audit-ready stock summaries.',
+      id: 'Dikembangkan melalui kemitraan dengan PT. Kokoh Inti Arebama untuk kegiatan operasional distribusi, sistem ini menjawab tantangan audit inventaris manual dan pencatatan yang tersebar. Dibangun sebagai Tugas Akhir komprehensif, platform ini mengolah manifes logistik, memvalidasi mutasi stok, mengkalkulasi alokasi rak, serta menyajikan rekap inventaris siap audit.',
+    },
+    contribution: {
+      en: 'Designed the inventory database schema, built inbound/outbound goods logging workflows, and developed the real-time stock monitoring dashboard—successfully implemented for operational use.',
+      id: 'Merancang skema database inventaris, membangun alur pencatatan barang masuk/keluar, dan mengembangkan dashboard monitoring stok real-time yang telah diimplementasikan secara operasional.',
     },
     problem: {
-      en: 'The Gresik operational facility managed complex shift rotations and extensive staff schedules using manual sign-in sheets and disconnected spreadsheets. Reconciling overtime, late arrivals, and night shifts required days of manual computation and was vulnerable to calculation discrepancies.',
-      id: 'Fasilitas operasional Gresik mengelola rotasi shift kerja yang padat menggunakan lembar tanda tangan manual dan spreadsheet terpisah. Rekonsiliasi lembur, keterlambatan, dan jam shift malam memakan waktu berhari-hari serta rawan terjadi selisih perhitungan.',
+      en: 'The warehouse facility previously relied on manual paperwork and offline spreadsheets for tracking pallet movements and inbound/outbound manifests. This resulted in delayed inventory counts, vulnerability to human data entry mistakes, and a lack of real-time visibility for operational supervisors.',
+      id: 'Fasilitas operasional gudang sebelumnya mengandalkan pencatatan kertas dan spreadsheet terpisah untuk mencatat pergerakan barang serta dokumen surat jalan. Hal ini menyebabkan keterlambatan rekap stok, risiko kesalahan input, dan ketiadaan pemantauan real-time bagi supervisor.',
     },
     solution: {
-      en: 'Architected an automated attendance processing engine with Python and web technologies that digests raw clock-in logs, reconciles shift rosters, computes overtime multipliers atomically, and outputs audit-ready monthly summaries via a modern web interface.',
-      id: 'Merancang mesin pemroses data absensi otomatis menggunakan Python dan teknologi web yang mengolah data log absensi, mencocokkan jadwal shift kerja, menghitung kelipatan lembur secara atomik, dan menyajikan rekap bulanan siap audit melalui antarmuka web modern.',
+      en: 'Architected an automated inventory engine and web interface that digests goods receipts, reconciles bin locations, validates barcode scans, and outputs audit-ready monthly summaries via a modern dashboard.',
+      id: 'Merancang sistem inventaris terotomasi dan antarmuka web yang mengolah penerimaan barang, mencocokkan lokasi rak, memvalidasi pemindaian barcode, dan menyajikan rekap bulanan siap audit melalui dashboard modern.',
     },
     features: {
       en: [
-        'Automated parsing and sanitization of raw biometric and machine attendance logs with Python.',
-        'Intelligent shift-matching engine handling regular, weekend, and rotating night shifts.',
-        'Precise overtime and tardiness penalty calculation rules with customizable thresholds.',
-        'Interactive supervisor dashboard with daily attendance percentage indicators.',
-        'One-click export of payroll-ready attendance recaps in Excel and PDF formats.',
+        'Automated parsing and logging of inbound and outbound goods manifests.',
+        'Real-time stock level monitoring with automated minimum threshold warnings.',
+        'Structured bin and rack slot allocation tracking with atomic database updates.',
+        'Interactive supervisor dashboard with daily inventory turnover metrics.',
+        'One-click export of audit-ready inventory reports in Excel and PDF formats.',
       ],
       id: [
-        'Pemrosesan dan pembersihan otomatis data log mentah dari mesin presensi biometrik dengan Python.',
-        'Mesin pencocokan shift cerdas untuk jadwal reguler, akhir pekan, maupun shift malam bergilir.',
-        'Kalkulasi lembur dan penalti keterlambatan yang presisi dengan parameter aturan yang fleksibel.',
-        'Dashboard interaktif supervisor dengan indikator persentase kehadiran harian.',
-        'Ekspor satu-klik laporan rekapitulasi kehadiran siap penggajian format Excel dan PDF.',
+        'Pencatatan dan pemrosesan otomatis manifes barang masuk dan keluar.',
+        'Pemantauan stok real-time dilengkapi notifikasi peringatan ambang batas minimum.',
+        'Pelacakan alokasi slot rak dan palet dengan pembaruan database atomik.',
+        'Dashboard interaktif supervisor dengan metrik perputaran inventaris harian.',
+        'Ekspor satu-klik laporan inventaris siap audit dalam format Excel dan PDF.',
       ],
     },
-    techStack: ['Python', 'PHP', 'MySQL', 'Data Processing', 'REST API', 'Tailwind CSS'],
+    techStack: ['Python', 'PHP', 'MySQL', 'REST API', 'Tailwind CSS'],
     role: {
-      en: 'Software & Data Processing Developer (Tugas Akhir)',
-      id: 'Pengembang Perangkat Lunak & Pengolah Data (Tugas Akhir)',
+      en: 'Software & Database Developer (Tugas Akhir)',
+      id: 'Pengembang Perangkat Lunak & Basis Data (Tugas Akhir)',
     },
-    partner: 'PT. Kokoh Inti Arebama (Gresik Distribution Hub)',
+    partner: 'PT. Kokoh Inti Arebama (Building Materials Distributor)',
     images: ['/images/projects/wms-kia-1.jpg', '/images/projects/wms-kia-2.jpg'],
     fallbackImages: ['/images/projects/wms-kia-1.svg', '/images/projects/wms-kia-2.svg'],
+    liveUrl: '',
+    githubUrl: '',
     featured: true,
   },
   {
@@ -163,16 +169,20 @@ export const projects: Project[] = [
     title: 'Corporate Financial Module & Information System — PT. Mahakam Berkah Bersama',
     category: 'industry',
     categoryBadge: {
-      en: 'PKL (Internship) • Frontend Engineering',
-      id: 'PKL (Magang) • Frontend Engineering',
+      en: 'PKL / Internship',
+      id: 'PKL / Magang',
     },
     summary: {
-      en: 'Frontend architecture and API integration for internal corporate financial transaction and reporting modules developed during internship at PT. Mahakam Berkah Bersama.',
-      id: 'Arsitektur frontend dan integrasi REST API untuk modul pencatatan transaksi dan pelaporan keuangan internal perusahaan yang dikembangkan selama magang di PT. Mahakam Berkah Bersama.',
+      en: 'Corporate ledger and financial reporting system engineered to handle dense transaction records and multi-column ledger tracking.',
+      id: 'Sistem pencatatan dan pelaporan keuangan perusahaan yang dirancang untuk menangani transaksi padat dan audit buku besar terstruktur.',
     },
     description: {
       en: 'During the internship (Praktik Kerja Lapangan) at PT. Mahakam Berkah Bersama, contributed as a Frontend Developer to build clean, typed, and resilient user interface modules for corporate financial ledgering, expense disbursements, and fiscal reporting.',
       id: 'Selama masa Praktik Kerja Lapangan (PKL) di PT. Mahakam Berkah Bersama, berkontribusi sebagai Frontend Developer membangun modul antarmuka yang rapi, bertipe aman, dan andal untuk pembukuan transaksi keuangan, pencairan biaya, dan laporan fiskal perusahaan.',
+    },
+    contribution: {
+      en: 'Developed responsive financial transaction and reporting UI components using React & TypeScript, and integrated backend REST APIs via Axios.',
+      id: 'Mengembangkan komponen UI transaksi dan laporan keuangan responsif menggunakan React & TypeScript, serta mengintegrasikan REST API backend menggunakan Axios.',
     },
     problem: {
       en: 'Internal finance teams needed an intuitive, modern dashboard interface capable of displaying dense tabular ledgers, filtering thousands of transactions dynamically, and maintaining rigorous client-side state synchrony with backend REST services without UI freezes.',
@@ -206,6 +216,8 @@ export const projects: Project[] = [
     partner: 'PT. Mahakam Berkah Bersama',
     images: ['/images/projects/mbb-finance-1.jpg', '/images/projects/mbb-finance-2.jpg'],
     fallbackImages: ['/images/projects/mbb-finance-1.svg', '/images/projects/mbb-finance-2.svg'],
+    liveUrl: '',
+    githubUrl: '',
     featured: true,
   },
   {
@@ -213,16 +225,20 @@ export const projects: Project[] = [
     title: 'Presensi — Digital School Attendance Web App',
     category: 'webapp',
     categoryBadge: {
-      en: 'Fullstack Web App • EdTech',
-      id: 'Aplikasi Web Fullstack • EdTech',
+      en: 'Fullstack Web App',
+      id: 'Aplikasi Web Fullstack',
     },
     summary: {
-      en: 'A modern web-based attendance platform featuring webcam photo-verified check-ins, location validation, and an administrative dashboard for automated attendance recap.',
-      id: 'Platform absensi sekolah berbasis web modern dengan verifikasi swafoto kamera langsung, validasi kehadiran, dan dashboard admin untuk rekapitulasi kehadiran otomatis.',
+      en: 'Digital school attendance platform featuring live webcam photo verification, automated tardiness rules, and administrator reports.',
+      id: 'Platform absensi sekolah digital dengan verifikasi foto webcam langsung, klasifikasi ketepatan waktu otomatis, dan rekap admin.',
     },
     description: {
       en: 'Designed and built to streamline daily school attendance tracking for students and faculty. The platform prevents proxy attendance by capturing live webcam verification snapshots upon check-in and provides automated reporting for school administration.',
       id: 'Dirancang dan dibangun untuk menyederhanakan pencatatan absensi harian siswa dan guru. Platform ini mencegah titip absen melalui tangkapan kamera langsung saat jam masuk dan menyediakan rekap otomatis bagi pihak sekolah.',
+    },
+    contribution: {
+      en: 'Built the fullstack architecture from scratch, including Express REST APIs, MySQL relational schema, photo-verified check-in flow, and admin recap dashboard.',
+      id: 'Membangun arsitektur fullstack dari nol, meliputi REST API Express, skema relasional MySQL, alur check-in dengan bukti foto, dan dashboard rekap admin.',
     },
     problem: {
       en: 'Traditional manual roll calls and paper sign-in sheets were time-consuming, prone to proxy attendance, and required hours of tedious manual data entry every month for homeroom teachers and staff.',
@@ -255,6 +271,8 @@ export const projects: Project[] = [
     },
     images: ['/images/projects/presensi-1.jpg', '/images/projects/presensi-2.jpg'],
     fallbackImages: ['/images/projects/presensi-1.svg', '/images/projects/presensi-2.svg'],
+    liveUrl: '',
+    githubUrl: '',
     featured: true,
   },
   {
@@ -262,8 +280,8 @@ export const projects: Project[] = [
     title: 'KantO – Digital Canteen Mobile App Design & Prototype',
     category: 'uiux',
     categoryBadge: {
-      en: 'Mobile UI/UX & Interactive Design',
-      id: 'Mobile UI/UX & Desain Interaktif',
+      en: 'Mobile UI/UX • Prototype',
+      id: 'Mobile UI/UX • Purwarupa',
     },
     summary: {
       en: 'Mobile UI/UX design and interactive Figma prototype for a digital school cafeteria ordering ecosystem, featuring queue reduction flows and student reward points.',
@@ -272,6 +290,10 @@ export const projects: Project[] = [
     description: {
       en: 'Crafted as a comprehensive mobile-first UI/UX case study in Figma. KantO envisions a cashless, queue-free cafeteria experience tailored for students during fast-paced school breaks, featuring pre-ordering flows, real-time kitchen ticket tracking, and gamified student rewards.',
       id: 'Dibuat sebagai studi kasus desain produk UI/UX mobile-first komprehensif di Figma. KantO mengusung konsep kantin digital non-tunai tanpa antrean yang dirancang khusus untuk kenyamanan siswa saat jam istirahat, lengkap dengan alur pre-order, tiket dapur real-time, dan sistem poin reward.',
+    },
+    contribution: {
+      en: 'Designed the end-to-end mobile user experience, food ordering journey, and interactive design system in Figma to reduce breaktime queue congestion.',
+      id: 'Merancang pengalaman pengguna mobile end-to-end, alur pemesanan makanan, dan sistem desain interaktif di Figma untuk mengurai antrean jam istirahat.',
     },
     problem: {
       en: 'Short 20-30 minute lunch breaks create chaotic queue bottlenecks at school canteens, leaving students with little time to eat and causing cafeteria vendors to lose track of peak-time orders.',
@@ -302,14 +324,16 @@ export const projects: Project[] = [
     },
     images: ['/images/projects/kanto-1.jpg'],
     fallbackImages: ['/images/projects/kanto-1.svg'],
+    liveUrl: '',
+    githubUrl: '',
   },
   {
     id: 'batik-sweety-mobile',
     title: 'Batik Sweety — Interactive Cultural Heritage App',
     category: 'uiux',
     categoryBadge: {
-      en: 'Mobile UI/UX & Interactive App',
-      id: 'Mobile UI/UX & Aplikasi Edukatif',
+      en: 'Mobile UI/UX & Interactive',
+      id: 'Mobile UI/UX & Interaktif',
     },
     summary: {
       en: 'Interactive educational mobile app introducing Indonesian batik heritage to teenagers through visual storytelling and gamified quizzes.',
@@ -318,6 +342,10 @@ export const projects: Project[] = [
     description: {
       en: 'Designed with a mobile-first philosophy to bridge cultural preservation with modern Gen-Z visual aesthetics. Features interactive motif explorations, philosophical background stories, and gamified quizzes.',
       id: 'Dirancang dengan pendekatan mobile-first untuk menjembatani pelestarian budaya tradisional dengan estetika visual generasi muda. Memuat ensiklopedia motif batik, makna filosofis, dan kuis edukatif berbasis poin.',
+    },
+    contribution: {
+      en: 'Researched traditional Indonesian batik patterns and created the gamified mobile prototype and high-fidelity interaction flows in Figma.',
+      id: 'Melakukan riset motif batik tradisional Indonesia dan merancang purwarupa interaktif serta alur kuis berhadiah di Figma.',
     },
     problem: {
       en: 'Many young students perceive traditional batik as formal or outdated, with limited interactive digital learning media available to explore its rich regional diversity.',
@@ -348,14 +376,16 @@ export const projects: Project[] = [
     },
     images: ['/images/projects/batik-sweety-1.jpg'],
     fallbackImages: ['/images/projects/batik-sweety-1.svg'],
+    liveUrl: '',
+    githubUrl: '',
   },
   {
     id: 'laundry-management-system',
     title: 'Laundry Management System',
     category: 'webapp',
     categoryBadge: {
-      en: 'Web Application • Operations',
-      id: 'Aplikasi Web • Manajemen Operasional',
+      en: 'Web Application',
+      id: 'Aplikasi Web Operasional',
     },
     summary: {
       en: 'Web-based operations manager for organizing customer profiles, order progress tracking, and financial transaction logs.',
@@ -364,6 +394,10 @@ export const projects: Project[] = [
     description: {
       en: 'Engineered to help small-and-medium laundry enterprises handle daily order volumes efficiently. Features stage progression pipelines, customer weight calculations, and printable receipts.',
       id: 'Direkayasa untuk membantu usaha laundry mengelola volume pesanan harian secara tertata. Dilengkapi pelacakan status bertahap, kalkulasi berat pakaian, dan pencetakan nota pelanggan.',
+    },
+    contribution: {
+      en: 'Engineered the fullstack PHP and MySQL web application with staged order tracking pipelines and automated receipt calculation.',
+      id: 'Membangun aplikasi web fullstack PHP dan MySQL dengan alur pelacakan tahapan cuci dan kalkulasi otomatis nota kasir.',
     },
     problem: {
       en: 'Laundry businesses frequently encounter misplaced customer garments, confusion around wash progress, and discrepancies in daily cash receipts due to manual paper logging.',
@@ -387,13 +421,15 @@ export const projects: Project[] = [
         'Laporan pemasukan harian dan bulanan untuk memantau performa bisnis laundry.',
       ],
     },
-    techStack: ['PHP', 'JavaScript', 'MySQL', 'Bootstrap', 'HTML5/CSS3'],
+    techStack: ['PHP', 'JavaScript', 'MySQL', 'Tailwind CSS', 'HTML5/CSS3'],
     role: {
       en: 'Fullstack Web Developer',
       id: 'Fullstack Web Developer',
     },
     images: ['/images/projects/laundry-1.jpg'],
     fallbackImages: ['/images/projects/laundry-1.svg'],
+    liveUrl: '',
+    githubUrl: '',
   },
   {
     id: 'equipment-borrowing-system',
@@ -410,6 +446,10 @@ export const projects: Project[] = [
     description: {
       en: 'A digital asset management system developed for institutional laboratories and schools to monitor the borrowing, reservation, and safe return of high-value equipment like cameras, routers, and lab devices.',
       id: 'Sistem manajemen aset digital yang dikembangkan untuk laboratorium dan institusi sekolah guna memantau pengajuan pinjam, reservasi, dan kondisi pengembalian alat berharga seperti kamera, router, dan perangkat lab.',
+    },
+    contribution: {
+      en: 'Architected the relational database and multi-step approval workflow engine for institutional asset lending and return verification.',
+      id: 'Merancang arsitektur basis data relasional dan sistem verifikasi persetujuan bertingkat untuk peminjaman aset institusi.',
     },
     problem: {
       en: 'School equipment and hardware items were often lent out without centralized records, resulting in unaccounted assets, broken devices returned without inspection, and missing accountability.',
@@ -433,13 +473,15 @@ export const projects: Project[] = [
         'Log audit aktivitas komprehensif yang merekam riwayat tanggal dan pihak peminjam.',
       ],
     },
-    techStack: ['PHP', 'MySQL', 'JavaScript', 'CSS3', 'Workflow Engine'],
+    techStack: ['PHP', 'MySQL', 'JavaScript', 'Tailwind CSS', 'Workflow Engine'],
     role: {
       en: 'Web Developer & Database Designer',
       id: 'Web Developer & Database Designer',
     },
     images: ['/images/projects/borrowing-1.jpg'],
     fallbackImages: ['/images/projects/borrowing-1.svg'],
+    liveUrl: '',
+    githubUrl: '',
   },
 ];
 
@@ -471,83 +513,69 @@ export const certificatesData: Certificate[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'backend',
-    title: {
-      en: 'Python, Backend & Data Processing',
-      id: 'Python, Backend & Pengolahan Data',
-    },
-    description: {
-      en: 'Core technical mastery in Python logic, automated data pipelines, REST endpoints, and relational databases.',
-      id: 'Penguasaan teknis utama pemrograman Python, pipeline data otomatis, endpoint REST, dan sistem basis data.',
-    },
-    skills: [
-      { name: 'Python (Primary Focus)', level: 'Advanced' },
-      { name: 'Data Processing & Logic', level: 'Advanced' },
-      { name: 'MySQL', level: 'Advanced' },
-      { name: 'PHP', level: 'Advanced' },
-      { name: 'RESTful APIs', level: 'Advanced' },
-      { name: 'Node.js & Express', level: 'Proficient' },
-      { name: 'Database Architecture', level: 'Advanced' },
-    ],
-  },
-  {
     id: 'frontend',
     title: {
-      en: 'React & Frontend Architecture',
-      id: 'React & Arsitektur Frontend',
+      en: 'Frontend',
+      id: 'Frontend',
     },
     description: {
-      en: 'Building responsive, fluid, and scalable UI architectures with React, TypeScript, and modern standards.',
-      id: 'Membangun antarmuka pengguna yang responsif, cepat, dan terstruktur rapi dengan React dan TypeScript.',
+      en: 'Responsive, accessible, and scalable UI engineering with modern component architectures.',
+      id: 'Pengembangan antarmuka web responsif, aksesibel, dan terstruktur rapi.',
     },
     skills: [
       { name: 'React JS', level: 'Advanced' },
       { name: 'TypeScript', level: 'Proficient' },
       { name: 'JavaScript (ES6+)', level: 'Advanced' },
       { name: 'Tailwind CSS', level: 'Advanced' },
-      { name: 'HTML5 & CSS3', level: 'Mastery' },
-      { name: 'Bootstrap', level: 'Proficient' },
-      { name: 'Axios & Fetch', level: 'Advanced' },
-      { name: 'Framer Motion', level: 'Proficient' },
+      { name: 'Vite', level: 'Advanced' },
     ],
   },
   {
-    id: 'uiux',
+    id: 'backend',
     title: {
-      en: 'UI/UX & Interactive Design',
-      id: 'UI/UX & Desain Interaktif',
+      en: 'Backend',
+      id: 'Backend',
     },
     description: {
-      en: 'Bridging design thinking with code to build intuitive and accessible experiences.',
-      id: 'Menghubungkan pola pikir desain dengan kode untuk menciptakan pengalaman memikat.',
+      en: 'Server-side business logic, automated routines, and RESTful API integrations.',
+      id: 'Logika bisnis server, otomasi pemrosesan, dan integrasi RESTful API.',
     },
     skills: [
-      { name: 'Figma', level: 'Advanced' },
-      { name: 'Wireframing', level: 'Advanced' },
-      { name: 'Interactive Prototyping', level: 'Advanced' },
-      { name: 'Design Systems', level: 'Proficient' },
-      { name: 'Responsive Layouts', level: 'Mastery' },
-      { name: 'Micro-Interactions', level: 'Proficient' },
+      { name: 'Node.js', level: 'Proficient' },
+      { name: 'PHP', level: 'Advanced' },
+      { name: 'Python', level: 'Advanced' },
+    ],
+  },
+  {
+    id: 'database',
+    title: {
+      en: 'Database',
+      id: 'Database',
+    },
+    description: {
+      en: 'Relational data modeling, schema normalization, and structured SQL operations.',
+      id: 'Pemodelan data relasional, normalisasi skema, dan operasional SQL terstruktur.',
+    },
+    skills: [
+      { name: 'MySQL', level: 'Advanced' },
     ],
   },
   {
     id: 'tools',
     title: {
-      en: 'Tools, Environment & DevOps',
-      id: 'Alat, Lingkungan & Alur Kerja',
+      en: 'Tools',
+      id: 'Tools',
     },
     description: {
-      en: 'Modern developer toolchains, version control, and operating systems.',
-      id: 'Peralatan pengembangan modern, kontrol versi, dan sistem operasi.',
+      en: 'Essential version control, code editors, local environments, and prototyping.',
+      id: 'Kontrol versi, editor kode, lingkungan lokal, dan purwarupa desain.',
     },
     skills: [
-      { name: 'Git & GitHub', level: 'Advanced' },
-      { name: 'Visual Studio Code', level: 'Mastery' },
-      { name: 'Linux (Arch Linux)', level: 'Proficient' },
-      { name: 'Windows', level: 'Advanced' },
-      { name: 'XAMPP / Apache', level: 'Advanced' },
-      { name: 'Postman / API Client', level: 'Advanced' },
-      { name: 'Vite & Bundlers', level: 'Advanced' },
+      { name: 'Git', level: 'Advanced' },
+      { name: 'GitHub', level: 'Advanced' },
+      { name: 'VS Code', level: 'Mastery' },
+      { name: 'XAMPP', level: 'Advanced' },
+      { name: 'Figma', level: 'Advanced' },
     ],
   },
 ];

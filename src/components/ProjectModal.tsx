@@ -55,6 +55,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
 
   const currentImage = images[activeImageIndex] || images[0] || project.images[0];
   const currentFallback = fallbacks[activeImageIndex] || fallbacks[0] || project.fallbackImages[0];
+  const liveLink = project.liveUrl || project.liveDemoUrl;
+  const hasLive = Boolean(liveLink && liveLink.trim().length > 0);
+  const hasGithub = Boolean(project.githubUrl && project.githubUrl.trim().length > 0);
 
   return (
     <AnimatePresence>
@@ -68,16 +71,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
           className="fixed inset-0 bg-navy-950/85 backdrop-blur-xl"
         />
 
-        {/* Modal Window Container */}
+        {/* Modal Window Container - Full height scrollable mobile sheet */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.98, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-navy-900 border border-electric-sky/30 shadow-2xl z-10 text-slate-100 flex flex-col"
+          exit={{ opacity: 0, scale: 0.98, y: 15 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+          className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-3xl bg-navy-950/95 border border-electric-sky/30 shadow-2xl z-10 text-slate-100 flex flex-col my-auto"
         >
           {/* Header Sticky Bar */}
-          <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-navy-900/95 backdrop-blur-md border-b border-electric-sky/15">
+          <div className="sticky top-0 z-20 flex items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 bg-navy-900/95 backdrop-blur-md border-b border-electric-sky/15">
             <div className="flex items-center gap-3">
               <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-electric-blue/15 text-electric-sky border border-electric-sky/30">
                 {language === 'EN' ? project.categoryBadge.en : project.categoryBadge.id}
@@ -92,7 +95,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
 
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-navy-800/80 hover:bg-navy-700 border border-slate-700 text-slate-300 hover:text-white transition-colors"
+              className="min-h-[44px] min-w-[44px] p-2.5 rounded-xl bg-navy-800/80 hover:bg-navy-700 border border-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-electric-sky"
               aria-label={t.projects.modal.closeModal}
             >
               <X className="w-5 h-5" />
@@ -107,6 +110,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
               </h2>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                 {language === 'EN' ? project.description.en : project.description.id}
+              </p>
+            </div>
+
+            {/* Explicit Engineering Contribution Block */}
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-electric-blue/15 via-navy-950/90 to-navy-950/90 border border-electric-sky/30 shadow-sm">
+              <div className="flex items-center gap-2 mb-2 text-electric-sky text-xs font-mono font-semibold uppercase tracking-wider">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>{t.projects.modal.contributionTitle}</span>
+              </div>
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
+                {language === 'EN' ? project.contribution.en : project.contribution.id}
               </p>
             </div>
 
@@ -275,39 +289,39 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
             {/* Action Bar (Live Demo / GitHub / Proprietary Notice) */}
             <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800">
               <div className="flex flex-wrap items-center gap-3">
-                {project.liveDemoUrl && (
+                {hasLive && (
                   <a
-                    href={project.liveDemoUrl}
+                    href={liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-electric-blue to-electric-cyan text-white text-xs font-semibold shadow-glow-sm hover:shadow-glow-md transition-all"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-electric-blue to-electric-cyan text-white text-xs font-semibold shadow-glow-sm hover:shadow-glow-md transition-all"
                   >
                     <span>{t.projects.liveDemo}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
 
-                {project.githubUrl ? (
+                {hasGithub ? (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 border border-slate-700 text-white text-xs font-semibold transition-all"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 border border-slate-700 text-white text-xs font-semibold transition-all"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                     <span>{t.projects.viewCode}</span>
                   </a>
-                ) : (
+                ) : !hasLive ? (
                   <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-navy-950 border border-slate-800 text-xs font-mono text-slate-400">
                     <Lock className="w-3.5 h-3.5 text-amber-400" />
                     <span>{t.projects.confidentialCode}</span>
                   </div>
-                )}
+                ) : null}
               </div>
 
               <button
                 onClick={onClose}
-                className="px-5 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 border border-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors"
+                className="min-h-[44px] px-5 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 border border-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors flex items-center justify-center"
               >
                 {t.projects.modal.closeModal}
               </button>

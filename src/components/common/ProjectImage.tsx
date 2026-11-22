@@ -52,7 +52,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
 
   const aspectClass =
     aspectRatio === '16/9'
-      ? 'aspect-[16/9]'
+      ? 'aspect-video'
       : aspectRatio === '4/3'
       ? 'aspect-[4/3]'
       : aspectRatio === '3/4'
@@ -87,10 +87,12 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   }
 
   return (
-    <div className={`relative w-full ${aspectClass} overflow-hidden bg-navy-900 ${className}`}>
+    <div className={`relative w-full ${aspectClass} overflow-hidden bg-navy-950 ${className}`}>
+      {/* Smooth Skeleton Loading Shimmer */}
       {isLoading && (
-        <div className="absolute inset-0 z-10 bg-navy-900 animate-pulse flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full border-2 border-electric-sky/30 border-t-electric-sky animate-spin" />
+        <div className="absolute inset-0 z-10 bg-navy-950 overflow-hidden">
+          <div className="w-full h-full bg-slate-900/90 animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" />
         </div>
       )}
       <img
@@ -99,8 +101,8 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
         loading="lazy"
         onError={handleError}
         onLoad={handleLoad}
-        className={`w-full h-full ${fitClass} transition-all duration-700 ${
-          isLoading ? 'opacity-0 scale-98 blur-sm' : 'opacity-100 scale-100 blur-0'
+        className={`w-full h-full ${fitClass} transition-opacity duration-300 ${
+          isLoading ? 'opacity-0' : 'opacity-100'
         }`}
       />
     </div>

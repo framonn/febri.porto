@@ -69,11 +69,11 @@ export const Certificates: React.FC = () => {
             return (
               <motion.div
                 key={cert.id}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className={`relative rounded-3xl overflow-hidden bg-gradient-to-br from-navy-900/90 via-navy-900/60 to-navy-950/90 border border-electric-sky/25 hover:border-electric-sky/60 backdrop-blur-xl shadow-lg hover:shadow-glow-md transition-all duration-300 group ${
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.4 }}
+                className={`relative rounded-3xl overflow-hidden bg-gradient-to-br from-navy-900/90 via-navy-900/60 to-navy-950/90 border border-electric-sky/25 hover:border-sky-400/40 hover:-translate-y-0.5 backdrop-blur-xl shadow-lg transition-all duration-200 ease-out group ${
                   isSingle ? 'p-6 sm:p-8 lg:p-10' : 'p-6 flex flex-col justify-between'
                 }`}
               >
@@ -246,7 +246,7 @@ export const Certificates: React.FC = () => {
 
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="p-2 rounded-xl bg-navy-800/80 hover:bg-navy-700 border border-slate-700 text-slate-300 hover:text-white transition-colors"
+                  className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2 rounded-xl bg-navy-800/80 hover:bg-navy-700 border border-slate-700 text-slate-300 hover:text-white transition-colors"
                   aria-label={t.certificates.closeLightbox}
                 >
                   <X className="w-5 h-5" />

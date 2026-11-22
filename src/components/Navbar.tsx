@@ -117,7 +117,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-navy-900/80 border border-electric-sky/20 text-slate-300 hover:text-white focus:outline-none"
+              className="md:hidden min-h-[44px] min-w-[44px] p-2.5 rounded-xl bg-navy-900/80 border border-electric-sky/20 text-slate-300 hover:text-white focus:outline-none flex items-center justify-center transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -126,33 +126,64 @@ export const Navbar: React.FC = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden border-b border-electric-sky/20 bg-navy-950/95 backdrop-blur-2xl overflow-hidden"
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="md:hidden border-b border-electric-sky/20 bg-navy-950/98 backdrop-blur-2xl overflow-hidden shadow-2xl"
           >
-            <div className="px-5 py-4 space-y-3">
+            <div className="px-5 py-4 space-y-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  className="min-h-[44px] flex items-center px-4 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-electric-blue/10 active:bg-electric-blue/20 rounded-xl transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
+
+              {/* Mobile Language Switcher Row */}
+              <div className="pt-3 pb-1 border-t border-slate-800 flex items-center justify-between">
+                <span className="text-xs font-mono text-slate-400">Language / Bahasa:</span>
+                <button
+                  type="button"
+                  onClick={toggleLanguage}
+                  className="min-h-[44px] inline-flex items-center gap-1.5 p-1 bg-navy-900 rounded-full border border-electric-sky/30 text-xs font-semibold"
+                >
+                  <span
+                    className={`px-3 py-1.5 rounded-full transition-colors ${
+                      language === 'EN'
+                        ? 'bg-gradient-to-r from-electric-sky to-electric-cyan text-navy-950 font-bold shadow-sm'
+                        : 'text-slate-400'
+                    }`}
+                  >
+                    EN
+                  </span>
+                  <span
+                    className={`px-3 py-1.5 rounded-full transition-colors ${
+                      language === 'ID'
+                        ? 'bg-gradient-to-r from-electric-sky to-electric-cyan text-navy-950 font-bold shadow-sm'
+                        : 'text-slate-400'
+                    }`}
+                  >
+                    ID
+                  </span>
+                </button>
+              </div>
+
+              {/* Mobile GitHub link */}
               <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
                 <a
                   href={personalInfo.github.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs text-electric-sky font-medium py-2"
+                  className="min-h-[44px] flex items-center gap-2 text-xs text-electric-sky font-medium py-2"
                 >
                   <GithubIcon className="w-4 h-4" />
                   <span>GitHub: @framonn</span>

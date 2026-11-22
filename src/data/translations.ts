@@ -68,12 +68,14 @@ export interface TranslationContent {
     filterIndustry: string;
     filterWebapp: string;
     filterUiux: string;
+    contributionLabel: string;
     viewCaseStudy: string;
     liveDemo: string;
     viewCode: string;
     confidentialCode: string;
     modal: {
       roleLabel: string;
+      contributionTitle: string;
       clientLabel: string;
       techLabel: string;
       problemTitle: string;
@@ -228,12 +230,14 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
       filterIndustry: 'Industry & Capstone',
       filterWebapp: 'Web Applications',
       filterUiux: 'UI/UX & Mobile',
+      contributionLabel: 'My Contribution',
       viewCaseStudy: 'View Case Study',
       liveDemo: 'Live Demo',
       viewCode: 'Source Code',
       confidentialCode: 'Proprietary Codebase',
       modal: {
         roleLabel: 'Role & Responsibility',
+        contributionTitle: 'My Engineering Contribution',
         clientLabel: 'Partner / Context',
         techLabel: 'Tech Stack',
         problemTitle: 'The Challenge & Problem',
@@ -387,12 +391,14 @@ export const translations: Record<'EN' | 'ID', TranslationContent> = {
       filterIndustry: 'Industri & Tugas Akhir',
       filterWebapp: 'Aplikasi Web',
       filterUiux: 'UI/UX & Mobile',
+      contributionLabel: 'Kontribusi Saya',
       viewCaseStudy: 'Buka Studi Kasus',
       liveDemo: 'Demo Langsung',
       viewCode: 'Kode Sumber',
       confidentialCode: 'Kode Proprietary Perusahaan',
       modal: {
         roleLabel: 'Peran & Tanggung Jawab',
+        contributionTitle: 'Kontribusi Rekayasa Saya',
         clientLabel: 'Mitra / Konteks Proyek',
         techLabel: 'Tumpukan Teknologi',
         problemTitle: 'Tantangan & Masalah',

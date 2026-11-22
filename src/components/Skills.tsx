@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Code2,
+  Server,
   Database,
   Terminal,
   Cpu,
   Sparkles,
 } from 'lucide-react';
-import { FigmaIcon } from './common/Icons';
 import { useLanguage } from '../context/LanguageContext';
 import { skillCategories } from '../data/portfolioData';
 
@@ -19,9 +19,9 @@ export const Skills: React.FC = () => {
       case 'frontend':
         return <Code2 className="w-5 h-5 text-electric-sky" />;
       case 'backend':
-        return <Database className="w-5 h-5 text-emerald-400" />;
-      case 'uiux':
-        return <FigmaIcon className="w-5 h-5 text-pink-400" />;
+        return <Server className="w-5 h-5 text-emerald-400" />;
+      case 'database':
+        return <Database className="w-5 h-5 text-cyan-400" />;
       case 'tools':
         return <Terminal className="w-5 h-5 text-amber-400" />;
       default:
@@ -62,73 +62,24 @@ export const Skills: React.FC = () => {
           </p>
         </div>
 
-        {/* Core Stack Spotlight Banner: Python Primary */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-electric-blue/15 via-navy-900/90 to-electric-cyan/15 border border-electric-sky/30 backdrop-blur-xl shadow-glow-sm"
-        >
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric-blue/20 text-electric-sky border border-electric-sky/30 text-xs font-mono font-semibold uppercase mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>
-                  {language === 'EN' ? 'Primary Technical Stack' : 'Penguasaan Teknis Utama'}
-                </span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-space">
-                {language === 'EN'
-                  ? 'Python — Primary Language & Core Focus'
-                  : 'Python — Bahasa Utama & Fokus Teknis'}
-              </h3>
-              <p className="text-sm text-slate-300 mt-1">
-                {language === 'EN'
-                  ? 'Specialized in Python for backend logic, data processing pipelines, and automated systems — the core of my technical identity.'
-                  : 'Menguasai Python untuk logika backend, pipeline pemrosesan data, dan sistem otomasi — inti dari identitas teknis saya.'}
-              </p>
-            </div>
-
-            <div className="flex items-center gap-4 w-full lg:w-auto">
-              {/* Python Card — full width since it's the solo highlight */}
-              <div className="flex-1 lg:w-72 p-5 rounded-2xl bg-navy-950/90 border border-electric-sky/40 shadow-inner flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-electric-blue/25 border border-electric-sky/40 flex items-center justify-center font-bold text-electric-sky text-xl shadow-glow-sm">
-                  Py
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-emerald-400 block font-semibold">
-                    {language === 'EN' ? '✦ Primary Focus' : '✦ Keahlian Utama'}
-                  </span>
-                  <span className="text-lg font-bold text-white font-space">Python</span>
-                  <span className="text-xs text-slate-400 block font-mono mt-0.5">
-                    Backend · Data Processing · Automation · Logic
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* 4 Categorized Bento Skill Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* 4 Clean, Structured Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={category.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="rounded-3xl p-7 sm:p-8 bg-navy-900/60 border border-electric-sky/15 hover:border-electric-sky/35 backdrop-blur-xl shadow-lg transition-all flex flex-col justify-between"
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, delay: idx * 0.08, ease: 'easeOut' }}
+              className="rounded-3xl p-6 sm:p-8 bg-navy-900/60 border border-electric-sky/15 hover:border-sky-400/40 backdrop-blur-xl shadow-lg transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-navy-950 border border-slate-800 flex items-center justify-center shadow-inner">
+                  <div className="w-11 h-11 rounded-2xl bg-navy-950 border border-slate-800 flex items-center justify-center shadow-inner">
                     {getCategoryIcon(category.id)}
                   </div>
                   <span className="text-xs font-mono text-slate-400">
-                    {category.skills.length} Capabilities
+                    {category.skills.length} Technologies
                   </span>
                 </div>
 
@@ -139,14 +90,14 @@ export const Skills: React.FC = () => {
                   {language === 'EN' ? category.description.en : category.description.id}
                 </p>
 
-                {/* Skill Chips with Proficiency Pills (No cliché % bars) */}
+                {/* Crisp, high-contrast skill pills */}
                 <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="group/chip inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-navy-950/80 border border-slate-800 hover:border-electric-sky/50 transition-all shadow-sm"
+                      className="group/chip inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-navy-950/80 border border-slate-800 hover:border-sky-400/40 hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
                     >
-                      <span className="text-xs sm:text-sm font-medium text-slate-200 group-hover/chip:text-white">
+                      <span className="text-xs sm:text-sm font-medium text-slate-200 group-hover/chip:text-white transition-colors">
                         {skill.name}
                       </span>
                       <span
@@ -164,9 +115,9 @@ export const Skills: React.FC = () => {
               <div className="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
                 <span className="flex items-center gap-1.5 text-electric-sky">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Production & Industry Ready</span>
+                  <span>Production & Verified Stack</span>
                 </span>
-                <span className="text-slate-400">Standardized</span>
+                <span className="text-slate-400">Core</span>
               </div>
             </motion.div>
           ))}

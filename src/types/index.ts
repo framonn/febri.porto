@@ -16,6 +16,10 @@ export interface Project {
     en: string;
     id: string;
   };
+  contribution: {
+    en: string;
+    id: string;
+  };
   problem: {
     en: string;
     id: string;
@@ -36,6 +40,7 @@ export interface Project {
   partner?: string;
   images: string[];
   fallbackImages: string[];
+  liveUrl?: string;
   liveDemoUrl?: string;
   githubUrl?: string;
   featured?: boolean;

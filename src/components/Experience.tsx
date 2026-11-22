@@ -88,14 +88,14 @@ export const Experience: React.FC = () => {
                 <motion.div
                   key={exp.id}
                   layout
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className={`relative rounded-3xl p-6 sm:p-8 md:p-10 border transition-all duration-300 ${
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className={`relative rounded-3xl p-6 sm:p-8 md:p-10 border transition-all duration-200 ease-out hover:-translate-y-0.5 ${
                     isCapstone
-                      ? 'bg-gradient-to-br from-navy-900/90 via-navy-900/60 to-navy-950/90 border-electric-sky/30 shadow-glow-sm hover:border-electric-sky/60'
-                      : 'bg-gradient-to-br from-navy-900/80 via-navy-900/50 to-navy-950/80 border-indigo-500/25 shadow-sm hover:border-indigo-400/50'
+                      ? 'bg-gradient-to-br from-navy-900/90 via-navy-900/60 to-navy-950/90 border-electric-sky/30 shadow-glow-sm hover:border-sky-400/50'
+                      : 'bg-gradient-to-br from-navy-900/80 via-navy-900/50 to-navy-950/80 border-indigo-500/25 shadow-sm hover:border-sky-400/40'
                   }`}
                 >
                   {/* Distinct Marker Ribbon */}

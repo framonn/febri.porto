@@ -39,9 +39,11 @@ export const About: React.FC = () => {
           
           {/* Bento Card 1: Main Story (Spans 2 columns, 2 rows) */}
           <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.2 }}
-            className="md:col-span-2 lg:col-span-2 p-8 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-electric-sky/35 backdrop-blur-xl shadow-lg flex flex-col justify-between group"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4 }}
+            className="md:col-span-2 lg:col-span-2 p-8 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-sky-400/40 hover:-translate-y-0.5 backdrop-blur-xl shadow-lg flex flex-col justify-between group transition-all duration-200 ease-out"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -87,9 +89,11 @@ export const About: React.FC = () => {
 
           {/* Bento Card 2: Education (RPL) */}
           <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.2 }}
-            className="p-6 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-electric-sky/35 backdrop-blur-xl shadow-lg flex flex-col justify-between"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="p-6 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-sky-400/40 hover:-translate-y-0.5 backdrop-blur-xl shadow-lg flex flex-col justify-between transition-all duration-200 ease-out"
           >
             <div>
               <div className="w-11 h-11 rounded-2xl bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-400 mb-5">
@@ -111,9 +115,11 @@ export const About: React.FC = () => {
 
           {/* Bento Card 3: Industry-Tested Experience */}
           <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.2 }}
-            className="p-6 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-electric-sky/35 backdrop-blur-xl shadow-lg flex flex-col justify-between"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="p-6 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-sky-400/40 hover:-translate-y-0.5 backdrop-blur-xl shadow-lg flex flex-col justify-between transition-all duration-200 ease-out"
           >
             <div>
               <div className="w-11 h-11 rounded-2xl bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center text-electric-cyan mb-5">
@@ -135,9 +141,11 @@ export const About: React.FC = () => {
 
           {/* Bento Card 4: Technical Focus (React, REST, DB) */}
           <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.2 }}
-            className="md:col-span-2 lg:col-span-2 p-6 sm:p-7 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-electric-sky/35 backdrop-blur-xl shadow-lg flex flex-col justify-between"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="md:col-span-2 lg:col-span-2 p-6 sm:p-7 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-sky-400/40 hover:-translate-y-0.5 backdrop-blur-xl shadow-lg flex flex-col justify-between transition-all duration-200 ease-out"
           >
             <div>
               <div className="w-11 h-11 rounded-2xl bg-electric-blue/10 border border-electric-sky/30 flex items-center justify-center text-electric-sky mb-4">
@@ -166,9 +174,11 @@ export const About: React.FC = () => {
 
           {/* Bento Card 5: UI/UX & Interactive Sensitivity */}
           <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.2 }}
-            className="md:col-span-1 lg:col-span-2 p-6 sm:p-7 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-electric-sky/35 backdrop-blur-xl shadow-lg flex flex-col justify-between"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="md:col-span-1 lg:col-span-2 p-6 sm:p-7 rounded-3xl bg-navy-900/60 border border-electric-sky/15 hover:border-sky-400/40 hover:-translate-y-0.5 backdrop-blur-xl shadow-lg flex flex-col justify-between transition-all duration-200 ease-out"
           >
             <div>
               <div className="w-11 h-11 rounded-2xl bg-pink-500/10 border border-pink-400/30 flex items-center justify-center text-pink-400 mb-4">

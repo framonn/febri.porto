@@ -38,9 +38,9 @@ export const Hero: React.FC = () => {
           
           {/* Left Column (Content & CTAs) */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
             className="lg:col-span-7 flex flex-col items-start text-left"
           >
             {/* Pulsing Availability Pill Badge */}
@@ -54,8 +54,8 @@ export const Hero: React.FC = () => {
               </span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.15] mb-4">
+            {/* Headline - Optimized Scaling to Prevent Awkward Mobile Wrap */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.15] mb-4 break-words">
               {t.hero.greeting}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
                 {personalInfo.displayName}
@@ -64,20 +64,20 @@ export const Hero: React.FC = () => {
             </h1>
 
             {/* Sub-tagline with Animated Gradient Glow */}
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-electric-sky via-electric-cyan to-indigo-400 font-space mb-5 leading-snug">
+            <h2 className="text-lg sm:text-2xl lg:text-3xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-electric-sky via-electric-cyan to-indigo-400 font-space mb-5 leading-snug">
               {t.hero.tagline}
             </h2>
 
             {/* Sub-headline Paragraph */}
-            <p className="text-base sm:text-lg text-slate-400 font-normal leading-relaxed max-w-2xl mb-8">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-400 font-normal leading-relaxed max-w-2xl mb-8">
               {t.hero.bio}
             </p>
 
-            {/* Call To Action Buttons */}
+            {/* Call To Action Buttons - Minimum 44px Touch Target & Restrained Motion */}
             <div className="flex flex-wrap items-center gap-4 mb-10 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-electric-blue to-electric-cyan text-white font-semibold text-sm shadow-glow-md hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-electric-blue to-electric-cyan text-white font-semibold text-sm shadow-glow-sm hover:shadow-glow-md hover:border-sky-400/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <span>{t.hero.exploreCta}</span>
                 <ArrowDown className="w-4 h-4 animate-bounce" />
@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
 
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-electric-sky/20 hover:border-electric-sky/50 text-slate-200 font-semibold text-sm transition-all shadow-sm"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-electric-sky/20 hover:border-sky-400/40 text-slate-200 font-semibold text-sm hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-sm"
               >
                 <Mail className="w-4 h-4 text-electric-sky" />
                 <span>{t.hero.contactCta}</span>
